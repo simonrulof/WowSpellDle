@@ -1,23 +1,55 @@
-The web application is a "dle" type games. 
+The web application is a "dle" type game. 
 
-Dle games are games where the user have to guess an item until it gets the wright one. 
-Each time the user guess, if it is the right one, the user wins, if it is the wrong one, the user gains informations of the guess he made, and the similarities between the item he guessed, and the item to be found.
-The user can keep trying until he gets the right one, the number of guess define the score.
+Dle games are games where the user has to guess an item until they get the right one. 
+Each time the user guesses, if it is the right one, the user wins. If it is wrong, the user gains information about the guess they made and the similarities between the guessed item and the item to be found.
+The user can keep trying until they get the right one. The number of guesses defines the score.
 You can check the web application "https://loldle.net/" which is a perfect example of a "dle" game with League of Legends theme.
 
-This web application aim to get the same gameplay with World of Warcraft Spells.
-The user can guess any spell from every class of World of Warcraft, and he will get informations on which class or which spec it is from, what is the cooldown of the spell, is it a healing, damaging, utility spell, School of the spell ect... The categories are to be defined.
-For the cooldown category, the user will have the information on if the spell he is looking for has a longer of shorter cooldown.
-For the use of the spell, there will be 4 categories : Healing, damaging, utility and Buff. More categories may be added in the future.
-For the class, spec, School of the spell, the application will only show if it is the right class, spec or school or not.
-The player gets an infinite number of attempts
-There will be one new spell to guess per day.
-The user can play with the spells of the previous days.
+This web application aims to replicate the same gameplay with World of Warcraft Spells.
+The user can guess any spell from every class of World of Warcraft, and they will get information on:
+- Which class the spell belongs to (Warrior, Mage, Priest, etc.)
+- Which specialization the spell belongs to (Fire, Holy, Protection, etc.)
+- The cooldown of the spell (with feedback: longer, shorter, or correct)
+- The use type of the spell (Healing, Damaging, Utility, or Buff)
+- The school of the spell (Physical, Fire, Frost, Holy, Nature, Shadow, Arcane)
 
-The data will come from a custom database, but the database will not be set at the begining of the project. So we will use json-server for the time being
+Feedback System:
+- For the cooldown category: the user will see if the spell they are looking for has a longer or shorter cooldown than their guess.
+- For the use type, class, spec, and school: the application will only show if it is the correct value or not.
 
-Statistics will be saved on cookies or cache, these statistics will be shown on a statistics page, showing the user's number of tries for each day he played.
+Game Rules:
+- The player gets an infinite number of attempts.
+- There is one new spell to guess per day (daily challenge).
+- The user can play with spells from previous days.
+- Statistics are saved in cookies or cache.
+- Statistics show the user's number of tries for each day they played.
 
-Other pages may be created on the future.
+Technical Details:
+- The data currently comes from a mock database using json-server for development.
+- A custom database will be implemented in the future.
+- The application supports both French and English languages.
+- Language detection is automatic based on browser locale, with manual toggle available.
+- All spell data (names, descriptions, class, spec, school, useType) is fully localized for both EN and FR.
 
-This application will have a French version and an English version.
+Data Structure:
+- Spells are stored with complete translations for both languages.
+- Each spell contains: id, translations (EN/FR), cooldown.
+- Translations include: name, description, class, spec, school, useType.
+
+Planned Features (Future):
+- Statistics page showing user's performance over time.
+- Settings page for language and preferences.
+- Classic spell versions game mode (separate game mode).
+- Additional categories for spell filtering.
+- Real custom database integration.
+
+Current Implementation Status:
+- ✅ Data service set up with json-server
+- ✅ Spell model with TypeScript types
+- ✅ LocalizationService for EN/FR support
+- ✅ 8 sample spells in database with complete translations
+- ✅ Example component demonstrating spell display and localization
+- ⏳ Main game component (in progress)
+- ⏳ Spell search/autocomplete (planned)
+- ⏳ Feedback display system (planned)
+- ⏳ Statistics tracking (planned)
