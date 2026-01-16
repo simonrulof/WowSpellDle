@@ -1,0 +1,23 @@
+The web application is a "dle" type games. 
+
+Dle games are games where the user have to guess an item until it gets the wright one. 
+Each time the user guess, if it is the right one, the user wins, if it is the wrong one, the user gains informations of the guess he made, and the similarities between the item he guessed, and the item to be found.
+The user can keep trying until he gets the right one, the number of guess define the score.
+You can check the web application "https://loldle.net/" which is a perfect example of a "dle" game with League of Legends theme.
+
+This web application aim to get the same gameplay with World of Warcraft Spells.
+The user can guess any spell from every class of World of Warcraft, and he will get informations on which class or which spec it is from, what is the cooldown of the spell, is it a healing, damaging, utility spell, School of the spell ect... The categories are to be defined.
+For the cooldown category, the user will have the information on if the spell he is looking for has a longer of shorter cooldown.
+For the use of the spell, there will be 4 categories : Healing, damaging, utility and Buff. More categories may be added in the future.
+For the class, spec, School of the spell, the application will only show if it is the right class, spec or school or not.
+The player gets an infinite number of attempts
+There will be one new spell to guess per day.
+The user can play with the spells of the previous days.
+
+The data will come from a custom database, but the database will not be set at the begining of the project. So we will use json-server for the time being
+
+Statistics will be saved on cookies or cache, these statistics will be shown on a statistics page, showing the user's number of tries for each day he played.
+
+Other pages may be created on the future.
+
+This application will have a French version and an English version.

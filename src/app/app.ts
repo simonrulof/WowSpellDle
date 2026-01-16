@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { SpellServiceExampleComponent } from './components/spell-service-example.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
+  imports: [SpellServiceExampleComponent],
+  template: '<app-spell-service-example></app-spell-service-example>',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('WowSpellDle');
-}
+export class App {}
+

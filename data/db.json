@@ -1,0 +1,194 @@
+{
+  "spells": [
+    {
+      "id": 1,
+      "translations": {
+        "en": {
+          "name": "Fireball",
+          "description": "Launch a fireball at the target",
+          "class": "Mage",
+          "spec": "Fire",
+          "school": "Fire",
+          "useType": "Damaging"
+        },
+        "fr": {
+          "name": "Boule de feu",
+          "description": "Lancez une boule de feu sur la cible",
+          "class": "Mage",
+          "spec": "Feu",
+          "school": "Feu",
+          "useType": "Dégâts"
+        }
+      },
+      "cooldown": 0
+    },
+    {
+      "id": 2,
+      "translations": {
+        "en": {
+          "name": "Heal",
+          "description": "Restore health to the target",
+          "class": "Priest",
+          "spec": "Holy",
+          "school": "Holy",
+          "useType": "Healing"
+        },
+        "fr": {
+          "name": "Guérison",
+          "description": "Restaurez la santé de la cible",
+          "class": "Prêtre",
+          "spec": "Sacré",
+          "school": "Sacré",
+          "useType": "Soins"
+        }
+      },
+      "cooldown": 0
+    },
+    {
+      "id": 3,
+      "translations": {
+        "en": {
+          "name": "Charge",
+          "description": "Charge at the target",
+          "class": "Warrior",
+          "spec": "Protection",
+          "school": "Physical",
+          "useType": "Utility"
+        },
+        "fr": {
+          "name": "Charge",
+          "description": "Chargez vers la cible",
+          "class": "Guerrier",
+          "spec": "Protection",
+          "school": "Physique",
+          "useType": "Utilitaire"
+        }
+      },
+      "cooldown": 8
+    },
+    {
+      "id": 4,
+      "translations": {
+        "en": {
+          "name": "Shadow Bolt",
+          "description": "Hurl a shadowy bolt at the target",
+          "class": "Warlock",
+          "spec": null,
+          "school": "Shadow",
+          "useType": "Damaging"
+        },
+        "fr": {
+          "name": "Trait de l'ombre",
+          "description": "Lancez un trait d'ombre sur la cible",
+          "class": "Démoniste",
+          "spec": null,
+          "school": "Ombre",
+          "useType": "Dégâts"
+        }
+      },
+      "cooldown": 0
+    },
+    {
+      "id": 5,
+      "translations": {
+        "en": {
+          "name": "Power Word: Shield",
+          "description": "Shield an ally with a protective barrier",
+          "class": "Priest",
+          "spec": "Discipline",
+          "school": "Holy",
+          "useType": "Buff"
+        },
+        "fr": {
+          "name": "Mot du pouvoir : Bouclier",
+          "description": "Protégez un allié avec une barrière",
+          "class": "Prêtre",
+          "spec": "Discipline",
+          "school": "Sacré",
+          "useType": "Buff"
+        }
+      },
+      "cooldown": 0
+    },
+    {
+      "id": 6,
+      "translations": {
+        "en": {
+          "name": "Frost Bolt",
+          "description": "Hurl a frosty bolt at the target",
+          "class": "Mage",
+          "spec": "Frost",
+          "school": "Frost",
+          "useType": "Damaging"
+        },
+        "fr": {
+          "name": "Trait de givre",
+          "description": "Lancez un trait de givre sur la cible",
+          "class": "Mage",
+          "spec": "Givre",
+          "school": "Givre",
+          "useType": "Dégâts"
+        }
+      },
+      "cooldown": 0
+    },
+    {
+      "id": 7,
+      "translations": {
+        "en": {
+          "name": "Rejuvenation",
+          "description": "Restore health to target over time",
+          "class": "Druid",
+          "spec": "Restoration",
+          "school": "Nature",
+          "useType": "Healing"
+        },
+        "fr": {
+          "name": "Rajeunissement",
+          "description": "Restaurez progressivement la santé",
+          "class": "Druide",
+          "spec": "Restauration",
+          "school": "Nature",
+          "useType": "Soins"
+        }
+      },
+      "cooldown": 0
+    },
+    {
+      "id": 8,
+      "translations": {
+        "en": {
+          "name": "Aimed Shot",
+          "description": "Carefully aim and fire at the target",
+          "class": "Hunter",
+          "spec": "Marksmanship",
+          "school": "Physical",
+          "useType": "Damaging"
+        },
+        "fr": {
+          "name": "Tir de visée",
+          "description": "Visez et tirez sur la cible",
+          "class": "Chasseur",
+          "spec": "Précision",
+          "school": "Physique",
+          "useType": "Dégâts"
+        }
+      },
+      "cooldown": 5
+    }
+  ],
+  "dailySpells": [
+    {
+      "date": "2026-01-16",
+      "spellId": 1
+    },
+    {
+      "date": "2026-01-15",
+      "spellId": 2
+    },
+    {
+      "date": "2026-01-14",
+      "spellId": 3
+    }
+  ]
+}
