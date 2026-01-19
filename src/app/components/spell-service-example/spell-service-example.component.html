@@ -1,0 +1,46 @@
+<div class="spell-service-example">
+  <div class="header">
+    <h1>{{ uiTranslationService.getText('example.title') }}</h1>
+    <button (click)="localizationService.toggleLanguage()" class="language-toggle">
+      {{ uiTranslationService.getLanguageDisplayName(localizationService.getLanguage()) }}
+    </button>
+  </div>
+
+  <!-- Today's Daily Spell -->
+  <section>
+    <h2>{{ uiTranslationService.getText('example.todaysSpell') }}</h2>
+    @if (todaysSpell$ | async; as spell) {
+      <div class="spell-card">
+        <h3>{{ getSpellName(spell) }}</h3>
+        <p><strong>{{ uiTranslationService.getText('example.class') }}</strong> {{ getSpellClass(spell) }}</p>
+        <p><strong>{{ uiTranslationService.getText('example.spec') }}</strong> {{ getSpellSpec(spell) || uiTranslationService.getText('game.feedback.na') }}</p>
+        <p><strong>{{ uiTranslationService.getText('example.cooldown') }}</strong> {{ spell.cooldown }}s</p>
+        <p><strong>{{ uiTranslationService.getText('example.type') }}</strong> {{ getSpellUseType(spell) }}</p>
+        <p><strong>{{ uiTranslationService.getText('example.school') }}</strong> {{ getSpellSchool(spell) }}</p>
+        <p><strong>{{ uiTranslationService.getText('example.description') }}</strong> {{ getSpellDescription(spell) }}</p>
+      </div>
+    } @else {
+      <p>{{ uiTranslationService.getText('example.loadingSpell') }}</p>
+    }
+  </section>
+
+  <!-- All Available Spells -->
+  <section>
+    <h2>{{ uiTranslationService.getText('example.allSpells') }}</h2>
+    @if (allSpells$ | async; as spells) {
+      @if (spells.length > 0) {
+        <div class="spells-list">
+          @for (spell of spells; track spell.id) {
+            <div class="spell-item">
+              <strong>{{ getSpellName(spell) }}</strong> ({{ getSpellClass(spell) }})
+            </div>
+          }
+        </div>
+      } @else {
+        <p>{{ uiTranslationService.getText('example.noSpells') }}</p>
+      }
+    } @else {
+      <p>{{ uiTranslationService.getText('example.loadingSpells') }}</p>
+    }
+  </section>
+</div>

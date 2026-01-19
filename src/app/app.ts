@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SpellServiceExampleComponent } from './components/spell-service-example.component';
+import { GameComponent } from './components/game/game.component';
 
 @Component({
   selector: 'app-root',
-  imports: [SpellServiceExampleComponent],
-  template: '<app-spell-service-example></app-spell-service-example>',
+  imports: [GameComponent],
+  template: '<app-game></app-game>',
   styleUrl: './app.scss'
 })
 export class App {}

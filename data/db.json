@@ -73,7 +73,7 @@
           "name": "Shadow Bolt",
           "description": "Hurl a shadowy bolt at the target",
           "class": "Warlock",
-          "spec": null,
+          "spec": "Toutes",
           "school": "Shadow",
           "useType": "Damaging"
         },
@@ -81,7 +81,7 @@
           "name": "Trait de l'ombre",
           "description": "Lancez un trait d'ombre sur la cible",
           "class": "Démoniste",
-          "spec": null,
+          "spec": "All",
           "school": "Ombre",
           "useType": "Dégâts"
         }
@@ -188,6 +188,10 @@
     },
     {
       "date": "2026-01-14",
+      "spellId": 3
+    },
+    {
+      "date": "2026-01-19",
       "spellId": 3
     }
   ]

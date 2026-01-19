@@ -1,0 +1,110 @@
+<div class="game-container">
+  <div class="game-header">
+    <h1>{{ uiTranslationService.getText('game.title') }}</h1>
+    <button (click)="localizationService.toggleLanguage()" class="language-toggle">
+      {{ uiTranslationService.getLanguageDisplayName(localizationService.getLanguage()) }}
+    </button>
+  </div>
+
+  @if (todaysSpell$ | async; as targetSpell) {
+    <div class="game-content">
+      <!-- Game Status -->
+      <div class="game-status">
+        <div class="attempts-counter">
+          <strong>{{ uiTranslationService.getText('game.attempts') }}</strong> {{ attemptCount() }}
+        </div>
+        @if (hasWon()) {
+          <div class="win-message">
+            <h2>{{ uiTranslationService.getText('game.youWon') }}</h2>
+            <p>
+              {{ uiTranslationService.getText('game.guessedIn') }}
+              {{ attemptCount() }}
+              {{ attemptCount() === 1 ? uiTranslationService.getText('game.attempt') : uiTranslationService.getText('game.attempts.plural') }}
+            </p>
+            <button (click)="resetGame()" class="btn btn-primary">
+              {{ uiTranslationService.getText('game.playAgain') }}
+            </button>
+          </div>
+        }
+      </div>
+
+      <!-- Spell Input -->
+      @if (!hasWon()) {
+        <div class="spell-input-section">
+          <label for="spell-search">{{ uiTranslationService.getText('game.guessTheSpell') }}</label>
+          <input
+            id="spell-search"
+            type="text"
+            [formControl]="spellInput"
+            [placeholder]="uiTranslationService.getText('game.spellNamePlaceholder')"
+            class="spell-input"
+            (keyup.enter)="makeGuess()"
+          />
+          <button (click)="makeGuess()" class="btn btn-primary" [disabled]="!spellInput.value">
+            {{ uiTranslationService.getText('game.guess') }}
+          </button>
+        </div>
+      }
+
+      <!-- Guesses History -->
+      @if (guesses().length > 0) {
+        <div class="guesses-section">
+          <h2>{{ uiTranslationService.getText('game.yourGuesses') }}</h2>
+          <div class="guesses-list">
+            @for (guess of guesses().slice().reverse(); track guess.attemptNumber; let last = $last) {
+              <div class="guess-item" [class.last-guess]="last">
+                <div class="guess-header">
+                  <span class="spell-name">{{ getSpellName(guess.spell) }}</span>
+                  <span class="attempt-number">{{ uiTranslationService.getText('game.attempt.number') }} {{ guess.attemptNumber }}</span>
+                </div>
+                <div class="guess-feedback">
+                  <div class="feedback-item" [class.correct]="guess.feedback.class">
+                    <span class="feedback-label">{{ uiTranslationService.getText('game.feedback.class') }}</span>
+                    <span class="feedback-icon">{{ guess.feedback.class ? '✓' : '✗' }}</span>
+                    <span class="feedback-value">{{ getSpellClass(guess.spell) }}</span>
+                  </div>
+                  <div class="feedback-item" [class.correct]="guess.feedback.spec">
+                    <span class="feedback-label">{{ uiTranslationService.getText('game.feedback.spec') }}</span>
+                    <span class="feedback-icon">{{ guess.feedback.spec ? '✓' : '✗' }}</span>
+                    <span class="feedback-value">{{ getSpellSpec(guess.spell) || uiTranslationService.getText('game.feedback.na') }}</span>
+                  </div>
+                  <div class="feedback-item" [class.correct]="guess.feedback.school">
+                    <span class="feedback-label">{{ uiTranslationService.getText('game.feedback.school') }}</span>
+                    <span class="feedback-icon">{{ guess.feedback.school ? '✓' : '✗' }}</span>
+                    <span class="feedback-value">{{ getSpellSchool(guess.spell) }}</span>
+                  </div>
+                  <div class="feedback-item" [class.correct]="guess.feedback.useType">
+                    <span class="feedback-label">{{ uiTranslationService.getText('game.feedback.type') }}</span>
+                    <span class="feedback-icon">{{ guess.feedback.useType ? '✓' : '✗' }}</span>
+                    <span class="feedback-value">{{ getSpellUseType(guess.spell) }}</span>
+                  </div>
+                  <div class="feedback-item" [class.correct]="guess.feedback.cooldown === 'correct'">
+                    <span class="feedback-label">{{ uiTranslationService.getText('game.feedback.cooldown') }}</span>
+                    <span class="feedback-icon">
+                      @switch (guess.feedback.cooldown) {
+                        @case ('correct') {
+                          ✓
+                        }
+                        @case ('longer') {
+                          ⬆
+                        }
+                        @case ('shorter') {
+                          ⬇
+                        }
+                      }
+                    </span>
+                    <span class="feedback-value">{{ guess.spell.cooldown }}s</span>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="loading-message">
+      <p>{{ uiTranslationService.getText('game.loading') }}</p>
+    </div>
+  }
+</div>
