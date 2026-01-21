@@ -100,8 +100,8 @@ export class GameComponent {
         guessedSpell.cooldown === targetSpell.cooldown
           ? 'correct'
           : guessedSpell.cooldown > targetSpell.cooldown
-            ? 'longer'
-            : 'shorter',
+            ? 'shorter'
+            : 'longer',
     };
   }
 
