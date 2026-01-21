@@ -1,0 +1,123 @@
+.spell-search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spell-search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #8b7355;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: rgba(45, 42, 37, 0.6);
+  color: #ffffff;
+
+  &:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  }
+
+  &.has-error {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+}
+
+.clear-btn {
+  padding: 6px 10px;
+  border: 1px solid rgba(139, 115, 85, 0.5);
+  background-color: rgba(139, 115, 85, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  color: #ffd700;
+
+  &:hover {
+    background-color: rgba(139, 115, 85, 0.5);
+  }
+}
+
+.spell-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background-color: rgba(45, 42, 37, 0.95);
+  border: 1px solid #8b7355;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid #8b7355;
+  color: #ffffff;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: rgba(139, 115, 85, 0.3);
+  }
+
+  &:active {
+    background-color: rgba(139, 115, 85, 0.5);
+  }
+
+  &.active {
+    background-color: rgba(255, 215, 0, 0.15);
+    border-left: 3px solid #ffd700;
+    padding-left: 9px;
+  }
+}
+
+.spell-icon-small {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.spell-name-item {
+  flex: 1;
+  font-weight: 500;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error-message {
+  margin-top: 6px;
+  padding: 8px;
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #ff6b6b;
+  border-radius: 4px;
+  font-size: 12px;
+  border-left: 3px solid #f44336;
+}

@@ -1,0 +1,22 @@
+.attempts-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  strong {
+    color: #ffd700;
+  }
+
+  .attempts-count {
+    background-color: rgba(139, 115, 85, 0.3);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    min-width: 2rem;
+    text-align: center;
+    font-weight: 700;
+    color: #ffd700;
+    border: 1px solid rgba(139, 115, 85, 0.5);
+  }
+}

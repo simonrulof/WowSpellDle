@@ -1,7 +1,7 @@
 .game-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
   font-family: Arial, sans-serif;
 }
 
@@ -9,29 +9,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  gap: 20px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 15px;
+  margin-bottom: 50px;
+  gap: 30px;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 25px;
 
   h1 {
     margin: 0;
-    color: #0066cc;
+    color: #ffd700;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
 }
 
 .language-toggle {
   padding: 8px 16px;
-  border: 2px solid #333;
+  border: 2px solid #8b7355;
   border-radius: 4px;
-  background-color: #f0f0f0;
+  background-color: #2d2a25;
+  color: #ffd700;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: #e0e0e0;
+    background-color: #3d3a35;
     transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
   }
 }
 
@@ -49,20 +53,15 @@
 }
 
 .game-status {
-  margin-bottom: 30px;
-  padding: 15px;
-  background-color: #f9f9f9;
+  margin-bottom: 50px;
+  padding: 25px;
+  background-color: rgba(45, 42, 37, 0.8);
   border-radius: 8px;
-  border-left: 4px solid #0066cc;
-}
-
-.attempts-counter {
-  font-size: 16px;
-  margin-bottom: 15px;
+  border-left: 4px solid #8b7355;
 }
 
 .win-message {
-  background-color: #e8f5e9;
+  background-color: rgba(56, 142, 60, 0.2);
   border-left: 4px solid #4caf50;
   padding: 15px;
   border-radius: 8px;
@@ -70,51 +69,43 @@
 
   h2 {
     margin: 0 0 10px 0;
-    color: #2e7d32;
+    color: #4caf50;
   }
 
   p {
     margin: 0 0 15px 0;
-    color: #388e3c;
+    color: #81c784;
   }
 }
 
 .spell-input-section {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 20px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
 
   label {
     font-weight: bold;
     min-width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
   }
 }
 
-.spell-input {
+.spell-search-wrapper {
   flex: 1;
   min-width: 200px;
-  padding: 10px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: border-color 0.2s ease;
-
-  &:focus {
-    outline: none;
-    border-color: #0066cc;
-    box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
-  }
+  width: 100%;
 }
 
 .btn {
-  padding: 10px 20px;
+  padding: 15px 30px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1.1em;
   transition: all 0.2s ease;
 
   &.btn-primary {
@@ -135,12 +126,12 @@
 }
 
 .guesses-section {
-  margin-top: 30px;
+  margin-top: 50px;
 
   h2 {
     margin-top: 0;
-    margin-bottom: 15px;
-    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5em;
   }
 }
 
@@ -151,14 +142,14 @@
 }
 
 .guess-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-color: rgba(45, 42, 37, 0.8);
+  border: 1px solid #8b7355;
   border-radius: 8px;
-  padding: 15px;
+  padding: 25px;
   animation: slideIn 0.3s ease-in;
 
   &.last-guess {
-    border-left: 4px solid #0066cc;
+    border-left: 4px solid #ffd700;
   }
 }
 
@@ -177,20 +168,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #8b7355;
+  gap: 15px;
+  font-size: 1.1em;
+}
+
+.spell-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .spell-name {
   font-weight: bold;
   font-size: 16px;
-  color: #333;
+  color: #ffd700;
+  flex-grow: 1;
 }
 
 .attempt-number {
   font-size: 12px;
-  color: #999;
+  color: #a89968;
 }
 
 .guess-feedback {
@@ -204,12 +205,12 @@
   align-items: center;
   gap: 8px;
   padding: 8px;
-  background-color: white;
+  background-color: rgba(60, 57, 52, 0.6);
   border-radius: 4px;
-  border: 1px solid #eee;
+  border: 1px solid #8b7355;
 
   &.correct {
-    background-color: #e8f5e9;
+    background-color: rgba(76, 175, 80, 0.2);
     border-color: #4caf50;
   }
 }
@@ -217,7 +218,7 @@
 .feedback-label {
   font-weight: bold;
   min-width: 70px;
-  color: #666;
+  color: #a89968;
   font-size: 12px;
 }
 
@@ -240,12 +241,12 @@
   flex: 1;
   text-align: right;
   font-size: 12px;
-  color: #555;
+  color: #ffffff;
 }
 
 .loading-message {
   text-align: center;
   padding: 40px;
   font-size: 18px;
-  color: #666;
+  color: #ffffff;
 }

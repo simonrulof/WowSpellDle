@@ -1,0 +1,44 @@
+<div class="spell-search-container">
+  <div class="search-input-wrapper">
+    <input
+      type="text"
+      [formControl]="searchInput"
+      [placeholder]="uiTranslationService.getText('game.spellNamePlaceholder')"
+      class="spell-search-input"
+      (keydown)="onKeyDown($event)"
+      (focus)="isOpen.set((searchInput.value?.length || 0) > 0)"
+      [class.has-error]="searchInput.value && (filteredSpells().length === 0) && isOpen()"
+
+    />
+    @if (searchInput.value) {
+      <button (click)="clearSearch()" class="clear-btn" [title]="'Clear'">✕</button>
+    }
+  </div>
+
+  <!-- Dropdown with filtered spells -->
+  @if (isOpen() && filteredSpells().length > 0) {
+    <div class="spell-dropdown">
+      <div class="dropdown-list">
+        @for (spell of filteredSpells(); let index = $index; track spell.id) {
+          <div
+            class="dropdown-item"
+            [class.active]="selectedIndex() === index"
+            (click)="selectSpell(spell)"
+          >
+            @if (iconService.getSpellIcon(getSpellName(spell)); as iconPath) {
+              <img [src]="iconPath" [alt]="getSpellName(spell)" class="spell-icon-small" />
+            }
+            <span class="spell-name-item">{{ getSpellName(spell) }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Validation feedback -->
+  @if (searchInput.value && !isValidSpell() && !isOpen()) {
+    <div class="error-message">
+      {{ uiTranslationService.getText('game.spellNotFound') }}
+    </div>
+  }
+</div>

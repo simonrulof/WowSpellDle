@@ -4,6 +4,9 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpellService } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
 import { UITranslationService } from '../../services/ui-translation.service';
+import { IconService } from '../../services/icon.service';
+import { AttemptsComponent } from '../attempts/attempts.component';
+import { SpellSearchComponent } from '../spell-search/spell-search.component';
 import { Spell, getSpellText } from '../../models/spell.model';
 import { Observable } from 'rxjs';
 
@@ -24,7 +27,7 @@ export interface SpellFeedback {
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, AttemptsComponent, SpellSearchComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
@@ -33,9 +36,9 @@ export class GameComponent {
   private spellService = inject(SpellService);
   localizationService = inject(LocalizationService);
   uiTranslationService = inject(UITranslationService);
+  iconService = inject(IconService);
 
   todaysSpell$: Observable<Spell | undefined> = this.spellService.getTodaysDailySpellWithDetails();
-  spellInput = new FormControl('');
 
   // State management - use signal for guesses
   private guessesList = signal<GuessResult[]>([]);
@@ -50,36 +53,19 @@ export class GameComponent {
   /**
    * Handle a spell guess
    */
-  makeGuess(): void {
-    const guessedSpellName = this.spellInput.value?.trim();
-    if (!guessedSpellName) return;
-
+  makeGuess(guessedSpell: Spell): void {
     this.todaysSpell$.subscribe((targetSpell) => {
-      if (!targetSpell) return;
+      if (!targetSpell || !guessedSpell) return;
 
-      this.spellService.getAllSpells().subscribe((allSpells) => {
-        const language = this.localizationService.getLanguage();
-        const guessedSpell = allSpells.find(
-          (spell) =>
-            getSpellText(spell, language).name.toLowerCase() === guessedSpellName.toLowerCase()
-        );
+      const feedback = this.compareSpells(guessedSpell, targetSpell);
+      const currentGuesses = this.guessesList();
+      const newGuess: GuessResult = {
+        spell: guessedSpell,
+        feedback,
+        attemptNumber: currentGuesses.length + 1,
+      };
 
-        if (!guessedSpell) {
-          alert(this.uiTranslationService.getText('game.spellNotFound'));
-          return;
-        }
-
-        const feedback = this.compareSpells(guessedSpell, targetSpell);
-        const currentGuesses = this.guessesList();
-        const newGuess: GuessResult = {
-          spell: guessedSpell,
-          feedback,
-          attemptNumber: currentGuesses.length + 1,
-        };
-
-        this.guessesList.set([...currentGuesses, newGuess]);
-        this.spellInput.reset();
-      });
+      this.guessesList.set([...currentGuesses, newGuess]);
     });
   }
 
@@ -123,7 +109,6 @@ export class GameComponent {
    */
   resetGame(): void {
     this.guessesList.set([]);
-    this.spellInput.reset();
   }
 
   // Helper methods for template
