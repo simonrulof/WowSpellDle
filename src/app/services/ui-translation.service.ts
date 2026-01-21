@@ -57,6 +57,12 @@ export class UITranslationService {
     'example.loadingSpell': { en: 'Loading today\'s spell...', fr: 'Chargement du sort du jour...' },
     'example.loadingSpells': { en: 'Loading spells...', fr: 'Chargement des sorts...' },
     'example.noSpells': { en: 'No spells available', fr: 'Aucun sort disponible' },
+    'game.feedback.tableHeader.spell': { en: 'Spell Name', fr: 'Nom du Sort' },
+    'game.feedback.tableHeader.class': { en: 'Class', fr: 'Classe' },
+    'game.feedback.tableHeader.spec': { en: 'Specialization', fr: 'Spécialisation' },
+    'game.feedback.tableHeader.school': { en: 'School', fr: 'École' },
+    'game.feedback.tableHeader.type': { en: 'Type', fr: 'Type' },
+    'game.feedback.tableHeader.cooldown': { en: 'Cooldown', fr: 'Temps de Recharge' },
   };
 
   /**
