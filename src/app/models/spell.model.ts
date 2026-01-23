@@ -25,6 +25,7 @@ export interface Spell {
   id: number;
   translations: SpellTranslations;
   cooldown: number; // in seconds
+  iconPath?: string; // Path to the spell icon SVG file (e.g., /assets/spell-icons/fireball.svg)
 }
 
 /**

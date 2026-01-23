@@ -56,7 +56,7 @@
               @for (guess of guesses().slice().reverse(); track guess.attemptNumber; let last = $last) {
                 <tr class="guess-row">
                   <td class="icon-cell feedback-cell" [class.correct]="getSpellName(guess.spell) === getSpellName((todaysSpell$ | async)!)">
-                    @if (iconService.getSpellIcon(getSpellName(guess.spell)); as iconPath) {
+                    @if (guess.spell.iconPath; as iconPath) {
                       <img [src]="iconPath" [alt]="getSpellName(guess.spell)" class="spell-icon" />
                     }
                   </td>

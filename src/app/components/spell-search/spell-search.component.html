@@ -25,7 +25,7 @@
             [class.active]="selectedIndex() === index"
             (click)="selectSpell(spell)"
           >
-            @if (iconService.getSpellIcon(getSpellName(spell)); as iconPath) {
+            @if (spell.iconPath; as iconPath) {
               <img [src]="iconPath" [alt]="getSpellName(spell)" class="spell-icon-small" />
             }
             <span class="spell-name-item">{{ getSpellName(spell) }}</span>

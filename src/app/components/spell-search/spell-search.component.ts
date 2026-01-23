@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpellService } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
-import { IconService } from '../../services/icon.service';
 import { UITranslationService } from '../../services/ui-translation.service';
 import { Spell, getSpellText } from '../../models/spell.model';
 import { distinctUntilChanged } from 'rxjs/operators';
@@ -19,7 +18,6 @@ import { distinctUntilChanged } from 'rxjs/operators';
 export class SpellSearchComponent {
   private spellService = inject(SpellService);
   private localizationService = inject(LocalizationService);
-  iconService = inject(IconService);
   uiTranslationService = inject(UITranslationService);
 
   // Input control

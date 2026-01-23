@@ -20,7 +20,8 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0
+      "cooldown": 0,
+      "iconPath": "/assets/spell-icons/fireball.svg"
     },
     {
       "id": "2",
@@ -42,7 +43,8 @@
           "useType": "Soins"
         }
       },
-      "cooldown": 0
+      "cooldown": 0,
+      "iconPath": "/assets/spell-icons/heal.svg"
     },
     {
       "id": "3",
@@ -64,7 +66,8 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 8
+      "cooldown": 8,
+      "iconPath": "/assets/spell-icons/charge.svg"
     },
     {
       "id": "4",
@@ -86,7 +89,8 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0
+      "cooldown": 0,
+      "iconPath": "/assets/spell-icons/shadow-bolt.svg"
     },
     {
       "id": "5",
@@ -108,7 +112,8 @@
           "useType": "Buff"
         }
       },
-      "cooldown": 0
+      "cooldown": 0,
+      "iconPath": "/assets/spell-icons/shield.svg"
     },
     {
       "id": "6",
@@ -130,7 +135,8 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0
+      "cooldown": 0,
+      "iconPath": "/assets/spell-icons/frost-bolt.svg"
     },
     {
       "id": "7",
@@ -152,7 +158,8 @@
           "useType": "Soins"
         }
       },
-      "cooldown": 0
+      "cooldown": 0,
+      "iconPath": "/assets/spell-icons/rejuvenation.svg"
     },
     {
       "id": "8",
@@ -174,7 +181,8 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 5
+      "cooldown": 5,
+      "iconPath": "/assets/spell-icons/aimed-shot.svg"
     }
   ],
   "dailySpells": [

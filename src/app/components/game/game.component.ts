@@ -4,7 +4,6 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpellService } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
 import { UITranslationService } from '../../services/ui-translation.service';
-import { IconService } from '../../services/icon.service';
 import { AttemptsComponent } from '../attempts/attempts.component';
 import { SpellSearchComponent } from '../spell-search/spell-search.component';
 import { Spell, getSpellText } from '../../models/spell.model';
@@ -36,7 +35,6 @@ export class GameComponent {
   private spellService = inject(SpellService);
   localizationService = inject(LocalizationService);
   uiTranslationService = inject(UITranslationService);
-  iconService = inject(IconService);
 
   todaysSpell$: Observable<Spell | undefined> = this.spellService.getTodaysDailySpellWithDetails();
 
