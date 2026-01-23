@@ -31,7 +31,7 @@
         <div class="spell-input-section">
           <label>{{ uiTranslationService.getText('game.guessTheSpell') }}</label>
           <div class="spell-search-wrapper">
-            <app-spell-search (spellSelected)="makeGuess($event)"></app-spell-search>
+            <app-spell-search (spellSelected)="makeGuess($event)" [guessedSpells]="guessedSpells()"></app-spell-search>
           </div>
         </div>
       }
@@ -63,19 +63,19 @@
                   <td class="spell-cell feedback-cell" [class.correct]="getSpellName(guess.spell) === getSpellName((todaysSpell$ | async)!)">
                     <span>{{ getSpellName(guess.spell) }}</span>
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.class">
+                  <td class="feedback-cell" [class.correct]="guess.feedback.class" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.class')">
                     {{ getSpellClass(guess.spell) }}
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.spec">
+                  <td class="feedback-cell" [class.correct]="guess.feedback.spec" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.spec')">
                     {{ getSpellSpec(guess.spell) || uiTranslationService.getText('game.feedback.na') }}
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.school">
+                  <td class="feedback-cell" [class.correct]="guess.feedback.school" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.school')">
                     {{ getSpellSchool(guess.spell) }}
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.useType">
+                  <td class="feedback-cell" [class.correct]="guess.feedback.useType" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.type')">
                     {{ getSpellUseType(guess.spell) }}
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.cooldown === 'correct'">
+                  <td class="feedback-cell" [class.correct]="guess.feedback.cooldown === 'correct'" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.cooldown')">
                     {{ guess.spell.cooldown }}s
                   </td>
                 </tr>

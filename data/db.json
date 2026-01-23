@@ -1,7 +1,7 @@
 {
   "spells": [
     {
-      "id": 1,
+      "id": "1",
       "translations": {
         "en": {
           "name": "Fireball",
@@ -23,7 +23,7 @@
       "cooldown": 0
     },
     {
-      "id": 2,
+      "id": "2",
       "translations": {
         "en": {
           "name": "Heal",
@@ -45,7 +45,7 @@
       "cooldown": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "translations": {
         "en": {
           "name": "Charge",
@@ -67,7 +67,7 @@
       "cooldown": 8
     },
     {
-      "id": 4,
+      "id": "4",
       "translations": {
         "en": {
           "name": "Shadow Bolt",
@@ -89,7 +89,7 @@
       "cooldown": 0
     },
     {
-      "id": 5,
+      "id": "5",
       "translations": {
         "en": {
           "name": "Power Word: Shield",
@@ -111,7 +111,7 @@
       "cooldown": 0
     },
     {
-      "id": 6,
+      "id": "6",
       "translations": {
         "en": {
           "name": "Frost Bolt",
@@ -133,7 +133,7 @@
       "cooldown": 0
     },
     {
-      "id": 7,
+      "id": "7",
       "translations": {
         "en": {
           "name": "Rejuvenation",
@@ -155,7 +155,7 @@
       "cooldown": 0
     },
     {
-      "id": 8,
+      "id": "8",
       "translations": {
         "en": {
           "name": "Aimed Shot",
@@ -180,23 +180,33 @@
   "dailySpells": [
     {
       "date": "2026-01-16",
-      "spellId": 1
+      "spellId": 1,
+      "id": "ad7f"
     },
     {
       "date": "2026-01-15",
-      "spellId": 2
+      "spellId": 2,
+      "id": "583e"
     },
     {
       "date": "2026-01-14",
-      "spellId": 4
+      "spellId": 4,
+      "id": "d27a"
     },
     {
       "date": "2026-01-19",
-      "spellId": 3
+      "spellId": 3,
+      "id": "b9e9"
     },
     {
       "date": "2026-01-21",
-      "spellId": 4
+      "spellId": 4,
+      "id": "994a"
+    },
+    {
+      "id": "c8e6",
+      "date": "2026-01-23",
+      "spellId": "6"
     }
   ]
 }

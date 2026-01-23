@@ -261,10 +261,14 @@
 }
 
 // Responsive design for mobile
-@media (max-width: 768px) {
+@media (aspect-ratio: 768px) {
   .guesses-table {
     font-size: 0.85em;
-    border-radius: 4px;
+    /* Mobile-only: make the table background transparent so individual guess cards
+       float over the page background without a filled table backdrop. */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 
     thead {
       display: none;
@@ -275,43 +279,78 @@
 
       tr {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 12px;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0;
         margin-bottom: 12px;
         border: 1px solid #8b7355;
         border-radius: 4px;
         border-bottom: 1px solid #8b7355;
+        position: relative;
+        background-color: rgba(45, 42, 37, 0.6);
 
         &:hover {
-          background-color: rgba(139, 115, 85, 0.2);
+          background-color: rgba(139, 115, 85, 0.3);
         }
       }
     }
 
     td {
-      padding: 6px;
+      padding: 0;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+
+      &.icon-cell {
+        position: absolute;
+        left: 12px;
+        top: 13%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none !important;
+        background-color: transparent !important;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
 
       &.spell-cell {
         grid-column: 1 / -1;
-        margin-bottom: 8px;
-        padding-bottom: 8px;
+        margin-bottom: 0;
+        padding: 8px;
+        padding-left: 0;
+        padding-right: 0;
         border-bottom: 1px solid rgba(139, 115, 85, 0.3);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+        gap: 0;
+        font-size: 1.3em;
+        font-weight: bold;
+        min-height: 50px;
+        text-align: center;
       }
 
       &.feedback-cell {
-        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border: 1px solid rgba(139, 115, 85, 0.5);
+        border-radius: 3px;
 
         &::before {
           content: attr(data-label);
           font-weight: bold;
-          color: #a89968;
-          font-size: 0.8em;
-          margin-bottom: 4px;
-          display: block;
+          color: #ffd700;
+          font-size: 1em;
         }
       }
     }

@@ -50,6 +50,9 @@ export class GameComponent {
     this.guessesList().some((guess: GuessResult) => this.isGuessCorrect(guess.feedback))
   );
 
+  // Extract guessed spells for the search component to exclude
+  guessedSpells = computed(() => this.guessesList().map((guess) => guess.spell));
+
   /**
    * Handle a spell guess
    */

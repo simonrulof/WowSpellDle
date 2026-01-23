@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy, signal, computed, output } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, signal, computed, output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpellService } from '../../services/spell.service';
@@ -6,7 +6,7 @@ import { LocalizationService } from '../../services/localization.service';
 import { IconService } from '../../services/icon.service';
 import { UITranslationService } from '../../services/ui-translation.service';
 import { Spell, getSpellText } from '../../models/spell.model';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-spell-search',
@@ -25,22 +25,29 @@ export class SpellSearchComponent {
   // Input control
   searchInput = new FormControl('');
 
+  // Input: guessed spells to exclude from dropdown
+  guessedSpells = input<Spell[]>([]);
+
   // State
   private allSpells = signal<Spell[]>([]);
   private searchQuery = signal('');
   isOpen = signal(false);
   selectedIndex = signal<number>(-1); // -1 means no selection
 
-  // Filtered spells based on search query
+  // Filtered spells based on search query (excluding already guessed spells)
   filteredSpells = computed(() => {
     const query = this.searchQuery().toLowerCase().trim();
     if (!query) return [];
 
     const language = this.localizationService.getLanguage();
-    return this.allSpells().filter((spell) => {
-      const spellText = getSpellText(spell, language);
-      return spellText.name.toLowerCase().includes(query);
-    });
+    const guessedSpellIds = new Set(this.guessedSpells().map((spell) => spell.id));
+
+    return this.allSpells()
+      .filter((spell) => !guessedSpellIds.has(spell.id)) // Exclude already guessed spells
+      .filter((spell) => {
+        const spellText = getSpellText(spell, language);
+        return spellText.name.toLowerCase().includes(query);
+      });
   });
 
   // Output event when spell is selected
@@ -55,7 +62,6 @@ export class SpellSearchComponent {
     // Handle search input changes
     this.searchInput.valueChanges
       .pipe(
-        debounceTime(200),
         distinctUntilChanged(),
       )
       .subscribe((value) => {
