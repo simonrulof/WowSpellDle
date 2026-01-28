@@ -245,7 +245,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_ambush.jpg"
     },
     {
@@ -772,7 +772,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 1,
       "iconPath": "/assets/spell-icons/ability_mount_jungletiger.jpg"
     },
     {
@@ -896,7 +896,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_druid_cower.jpg"
     },
     {
@@ -1361,7 +1361,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_physical_taunt.jpg"
     },
     {
@@ -1547,7 +1547,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 5,
       "iconPath": "/assets/spell-icons/ability_hunter_swiftstrike.jpg"
     },
     {
@@ -1578,7 +1578,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/ability_impalingbolt.jpg"
     },
     {
@@ -1640,7 +1640,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/ability_meleedamage.jpg"
     },
     {
@@ -1702,7 +1702,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_upgrademoonglaive.jpg"
     },
     {
@@ -1826,7 +1826,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_frost_chainsofice.jpg"
     },
     {
@@ -1857,7 +1857,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_fire_selfdestruct.jpg"
     },
     {
@@ -1919,7 +1919,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 5,
       "iconPath": "/assets/spell-icons/ability_rogue_feint.jpg"
     },
     {
@@ -1950,7 +1950,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 8,
       "iconPath": "/assets/spell-icons/spell_arcane_blink.jpg"
     },
     {
@@ -1981,7 +1981,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_fire_flameshock.jpg"
     },
     {
@@ -2136,7 +2136,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/ability_rogue_feigndeath.jpg"
     },
     {
@@ -2198,7 +2198,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 20,
       "iconPath": "/assets/spell-icons/spell_nature_drowsy.jpg"
     },
     {
@@ -2322,7 +2322,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_frost_freezingbreath.jpg"
     },
     {
@@ -2601,7 +2601,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_fire_flare.jpg"
     },
     {
@@ -2663,7 +2663,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 12,
       "iconPath": "/assets/spell-icons/spell_frost_stun.jpg"
     },
     {
@@ -3190,7 +3190,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/spell_frost_glacier.jpg"
     },
     {
@@ -3221,7 +3221,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 8,
       "iconPath": "/assets/spell-icons/spell_fire_fireball.jpg"
     },
     {
@@ -3314,7 +3314,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_fire_firearmor.jpg"
     },
     {
@@ -3345,7 +3345,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_frost_frostward.jpg"
     },
     {
@@ -3376,7 +3376,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_frost_frostnova.jpg"
     },
     {
@@ -3686,7 +3686,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_arcane_blink.jpg"
     },
     {
@@ -3748,7 +3748,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_frost_iceshock.jpg"
     },
     {
@@ -4492,7 +4492,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_holy_turnundead.jpg"
     },
     {
@@ -4604,7 +4604,7 @@
           "useType": "Buff"
         },
         "fr": {
-          "name": "Retribution Aura",
+          "name": "Aura de vindicte",
           "description": "Inflige 20 points de dégâts du Sacré à toute créature qui frappe un membre du groupe se trouvant dans un rayon de 30 mètres. Les joueurs ne peuvent disposer à tout moment que d'une Aura par paladin.",
           "class": "Paladin",
           "spec": [
@@ -4895,7 +4895,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_holy_excorcism_02.jpg"
     },
     {
@@ -4957,7 +4957,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/ability_thunderclap.jpg"
     },
     {
@@ -5236,7 +5236,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/spell_holy_righteousfury.jpg"
     },
     {
@@ -5422,7 +5422,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 20,
       "iconPath": "/assets/spell-icons/spell_holy_sealofvalor.jpg"
     },
     {
@@ -5918,7 +5918,7 @@
           "useType": "Soin"
         }
       },
-      "cooldown": 0,
+      "cooldown": 4,
       "iconPath": "/assets/spell-icons/spell_holy_powerwordshield.jpg"
     },
     {
@@ -6073,7 +6073,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 8,
       "iconPath": "/assets/spell-icons/spell_shadow_unholyfrenzy.jpg"
     },
     {
@@ -6414,7 +6414,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_shadow_psychicscream.jpg"
     },
     {
@@ -6445,7 +6445,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_magic_lesserinvisibilty.jpg"
     },
     {
@@ -6538,7 +6538,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_holy_excorcism.jpg"
     },
     {
@@ -6786,7 +6786,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_stealth.jpg"
     },
     {
@@ -6879,7 +6879,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_gouge.jpg"
     },
     {
@@ -6910,7 +6910,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 20,
       "iconPath": "/assets/spell-icons/ability_rogue_kidneyshot.jpg"
     },
     {
@@ -7065,7 +7065,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_rogue_feint.jpg"
     },
     {
@@ -7096,7 +7096,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_kick.jpg"
     },
     {
@@ -7313,7 +7313,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/ability_rogue_distract.jpg"
     },
     {
@@ -7685,7 +7685,7 @@
           "useType": "Invocation"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_fire_sealoffire.jpg"
     },
     {
@@ -7747,7 +7747,7 @@
           "useType": "Invocation"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_nature_stoneclawtotem.jpg"
     },
     {
@@ -7964,7 +7964,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/spell_fire_flameshock.jpg"
     },
     {
@@ -8026,7 +8026,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/spell_nature_chainlightning.jpg"
     },
     {
@@ -8150,7 +8150,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/spell_nature_earthshock.jpg"
     },
     {
@@ -8243,7 +8243,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 6,
       "iconPath": "/assets/spell-icons/spell_frost_frostshock.jpg"
     },
     {
@@ -8367,7 +8367,7 @@
           "useType": "Invocation"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_nature_groundingtotem.jpg"
     },
     {
@@ -8708,7 +8708,7 @@
           "useType": "Invocation"
         }
       },
-      "cooldown": 0,
+      "cooldown": 15,
       "iconPath": "/assets/spell-icons/spell_nature_strengthofearthtotem02.jpg"
     },
     {
@@ -9421,7 +9421,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_shadow_antishadow.jpg"
     },
     {
@@ -9452,7 +9452,7 @@
           "useType": "Contrôle"
         }
       },
-      "cooldown": 0,
+      "cooldown": 40,
       "iconPath": "/assets/spell-icons/spell_shadow_deathscream.jpg"
     },
     {
@@ -10227,7 +10227,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 5,
       "iconPath": "/assets/spell-icons/ability_meleedamage.jpg"
     },
     {
@@ -10320,7 +10320,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 5,
       "iconPath": "/assets/spell-icons/ability_warrior_revenge.jpg"
     },
     {
@@ -10444,7 +10444,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 4,
       "iconPath": "/assets/spell-icons/spell_nature_thunderclap.jpg"
     },
     {
@@ -10506,7 +10506,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/inv_gauntlets_04.jpg"
     },
     {
@@ -10537,7 +10537,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 12,
       "iconPath": "/assets/spell-icons/ability_warrior_shieldbash.jpg"
     },
     {
@@ -10692,7 +10692,7 @@
           "useType": "Dégâts"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/ability_whirlwind.jpg"
     },
     {
@@ -10754,7 +10754,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 1,
       "iconPath": "/assets/spell-icons/ability_warrior_defensivestance.jpg"
     },
     {
@@ -10785,7 +10785,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 30,
       "iconPath": "/assets/spell-icons/spell_nature_ancestralguardian.jpg"
     },
     {
@@ -10847,7 +10847,7 @@
           "useType": "Utilitaire"
         }
       },
-      "cooldown": 0,
+      "cooldown": 10,
       "iconPath": "/assets/spell-icons/spell_nature_reincarnation.jpg"
     },
     {
@@ -10909,7 +10909,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 5,
       "iconPath": "/assets/spell-icons/ability_defend.jpg"
     },
     {
@@ -11033,7 +11033,7 @@
           "useType": "Amélioration"
         }
       },
-      "cooldown": 0,
+      "cooldown": 1,
       "iconPath": "/assets/spell-icons/ability_warrior_offensivestance.jpg"
     }
   ],
