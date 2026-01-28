@@ -5,6 +5,7 @@ import { SpellService } from '../services/spell.service';
 import { LocalizationService } from '../services/localization.service';
 import { Spell, getSpellText } from '../models/spell.model';
 import { Observable } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 interface GuessResult {
   spell: Spell;
@@ -14,7 +15,7 @@ interface GuessResult {
 
 interface SpellFeedback {
   class: boolean;
-  spec: boolean;
+  spec: 'correct' | 'partial' | 'incorrect';
   school: boolean;
   useType: boolean;
   cooldown: 'correct' | 'longer' | 'shorter';
@@ -451,7 +452,7 @@ export class GameComponent {
 
     return {
       class: guessedText.class === targetText.class,
-      spec: guessedText.spec === targetText.spec,
+      spec: this.compareSpecs(guessedText.spec, targetText.spec),
       school: guessedText.school === targetText.school,
       useType: guessedText.useType === targetText.useType,
       cooldown:
@@ -464,12 +465,32 @@ export class GameComponent {
   }
 
   /**
+   * Compare two spec arrays
+   * Returns 'correct' if arrays are identical, 'partial' if there's any overlap, 'incorrect' otherwise
+   */
+  private compareSpecs(guessedSpecs: string[], targetSpecs: string[]): 'correct' | 'partial' | 'incorrect' {
+    // Safety check: ensure both are arrays
+    const guessedArray = Array.isArray(guessedSpecs) ? guessedSpecs : [guessedSpecs];
+    const targetArray = Array.isArray(targetSpecs) ? targetSpecs : [targetSpecs];
+    
+    // Check if arrays are identical (same length and same items)
+    if (guessedArray.length === targetArray.length && 
+        guessedArray.every(spec => targetArray.includes(spec))) {
+      return 'correct';
+    }
+    
+    // Check for any overlap
+    const hasOverlap = guessedArray.some(spec => targetArray.includes(spec));
+    return hasOverlap ? 'partial' : 'incorrect';
+  }
+
+  /**
    * Check if a guess is completely correct
    */
   private isGuessCorrect(feedback: SpellFeedback): boolean {
     return (
       feedback.class &&
-      feedback.spec &&
+      feedback.spec === 'correct' &&
       feedback.school &&
       feedback.useType &&
       feedback.cooldown === 'correct'
@@ -497,8 +518,8 @@ export class GameComponent {
     return getSpellText(spell, language).class;
   }
 
-  getSpellSpec(spell: Spell | null | undefined): string | null {
-    if (!spell) return null;
+  getSpellSpec(spell: Spell | null | undefined): string[] {
+    if (!spell) return [];
     const language = this.localizationService.getLanguage();
     return getSpellText(spell, language).spec;
   }

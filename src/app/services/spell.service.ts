@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, switchMap } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, shareReplay } from 'rxjs/operators';
 import { Spell } from '../models/spell.model';
 
 interface DailySpellEntry {
@@ -15,6 +15,10 @@ interface DailySpellEntry {
 export class SpellService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:3000';
+
+  // Cache for today's spell - shared across all components
+  private todaysSpellCache$?: Observable<Spell | undefined>;
+  private cachedDate?: string;
 
   /**
    * Get all available spells
@@ -84,10 +88,19 @@ export class SpellService {
   /**
    * Get today's daily spell with full details
    * If no entry exists for today, create one with a random spell not used in the last 5 days
+   * Uses caching to ensure only one spell per day and avoid regenerating on page refresh
    */
   getTodaysDailySpellWithDetails(): Observable<Spell | undefined> {
     const today = this.getTodayDate();
-    return this.getDailySpellWithDetails(today).pipe(
+    
+    // If we have a cached observable for today, return it
+    if (this.todaysSpellCache$ && this.cachedDate === today) {
+      return this.todaysSpellCache$;
+    }
+    
+    // Otherwise, create a new observable and cache it
+    this.cachedDate = today;
+    this.todaysSpellCache$ = this.getDailySpellWithDetails(today).pipe(
       switchMap((spell) => {
         // If spell found for today, return it
         if (spell) {
@@ -96,7 +109,10 @@ export class SpellService {
         // If no spell found, generate one
         return this.generateDailySpellForToday();
       }),
+      shareReplay(1), // Share the result among all subscribers
     );
+    
+    return this.todaysSpellCache$;
   }
 
   /**

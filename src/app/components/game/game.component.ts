@@ -8,6 +8,7 @@ import { AttemptsComponent } from '../attempts/attempts.component';
 import { SpellSearchComponent } from '../spell-search/spell-search.component';
 import { Spell, getSpellText } from '../../models/spell.model';
 import { Observable } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 export interface GuessResult {
   spell: Spell;
@@ -17,7 +18,7 @@ export interface GuessResult {
 
 export interface SpellFeedback {
   class: boolean;
-  spec: boolean;
+  spec: 'correct' | 'partial' | 'incorrect'; // Changed to support 3 states
   school: boolean;
   useType: boolean;
   cooldown: 'correct' | 'longer' | 'shorter';
@@ -37,6 +38,9 @@ export class GameComponent {
   uiTranslationService = inject(UITranslationService);
 
   todaysSpell$: Observable<Spell | undefined> = this.spellService.getTodaysDailySpellWithDetails();
+  
+  // Convert Observable to Signal for use in computed
+  private todaysSpellSignal = toSignal(this.todaysSpell$);
 
   // State management - use signal for guesses
   private guessesList = signal<GuessResult[]>([]);
@@ -44,9 +48,12 @@ export class GameComponent {
 
   attemptCount = computed(() => this.guessesList().length);
 
-  hasWon = computed(() =>
-    this.guessesList().some((guess: GuessResult) => this.isGuessCorrect(guess.feedback))
-  );
+  hasWon = computed(() => {
+    const todaysSpell = this.todaysSpellSignal();
+    if (!todaysSpell) return false;
+    // Check if any guess matches the actual spell ID
+    return this.guessesList().some((guess: GuessResult) => guess.spell.id === todaysSpell.id);
+  });
 
   // Extract guessed spells for the search component to exclude
   guessedSpells = computed(() => this.guessesList().map((guess) => guess.spell));
@@ -80,7 +87,7 @@ export class GameComponent {
 
     return {
       class: guessedText.class === targetText.class,
-      spec: guessedText.spec === targetText.spec,
+      spec: this.compareSpecs(guessedText.spec, targetText.spec),
       school: guessedText.school === targetText.school,
       useType: guessedText.useType === targetText.useType,
       cooldown:
@@ -93,12 +100,32 @@ export class GameComponent {
   }
 
   /**
+   * Compare two spec arrays
+   * Returns 'correct' if arrays are identical, 'partial' if there's any overlap, 'incorrect' otherwise
+   */
+  private compareSpecs(guessedSpecs: string[], targetSpecs: string[]): 'correct' | 'partial' | 'incorrect' {
+    // Safety check: ensure both are arrays
+    const guessedArray = Array.isArray(guessedSpecs) ? guessedSpecs : [guessedSpecs];
+    const targetArray = Array.isArray(targetSpecs) ? targetSpecs : [targetSpecs];
+    
+    // Check if arrays are identical (same length and same items)
+    if (guessedArray.length === targetArray.length && 
+        guessedArray.every(spec => targetArray.includes(spec))) {
+      return 'correct';
+    }
+    
+    // Check for any overlap
+    const hasOverlap = guessedArray.some(spec => targetArray.includes(spec));
+    return hasOverlap ? 'partial' : 'incorrect';
+  }
+
+  /**
    * Check if a guess is completely correct
    */
   private isGuessCorrect(feedback: SpellFeedback): boolean {
     return (
       feedback.class &&
-      feedback.spec &&
+      feedback.spec === 'correct' &&
       feedback.school &&
       feedback.useType &&
       feedback.cooldown === 'correct'
@@ -125,8 +152,8 @@ export class GameComponent {
     return getSpellText(spell, language).class;
   }
 
-  getSpellSpec(spell: Spell | null | undefined): string | null {
-    if (!spell) return null;
+  getSpellSpec(spell: Spell | null | undefined): string[] {
+    if (!spell) return [];
     const language = this.localizationService.getLanguage();
     return getSpellText(spell, language).spec;
   }

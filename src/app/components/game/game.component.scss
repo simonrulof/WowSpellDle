@@ -246,7 +246,11 @@
         background-color: rgba(76, 175, 80, 0.4);
       }
 
-      &:not(.correct) {
+      &.partial {
+        background-color: rgba(255, 165, 0, 0.4); // Orange for partial match
+      }
+
+      &:not(.correct):not(.partial) {
         background-color: rgba(255, 107, 107, 0.4);
       }
     }

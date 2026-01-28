@@ -66,8 +66,11 @@
                   <td class="feedback-cell" [class.correct]="guess.feedback.class" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.class')">
                     {{ getSpellClass(guess.spell) }}
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.spec" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.spec')">
-                    {{ getSpellSpec(guess.spell) || uiTranslationService.getText('game.feedback.na') }}
+                  <td class="feedback-cell" 
+                      [class.correct]="guess.feedback.spec === 'correct'" 
+                      [class.partial]="guess.feedback.spec === 'partial'"
+                      [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.spec')">
+                    {{ getSpellSpec(guess.spell).join(', ') || uiTranslationService.getText('game.feedback.na') }}
                   </td>
                   <td class="feedback-cell" [class.correct]="guess.feedback.school" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.school')">
                     {{ getSpellSchool(guess.spell) }}

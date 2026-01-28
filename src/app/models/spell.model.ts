@@ -7,7 +7,7 @@ export interface SpellTranslations {
     name: string;
     description: string;
     class: string;
-    spec: string | null;
+    spec: string[]; // Changed to array of specializations
     school: string;
     useType: string;
   };
@@ -15,7 +15,7 @@ export interface SpellTranslations {
     name: string;
     description: string;
     class: string;
-    spec: string | null;
+    spec: string[]; // Changed to array of specializations
     school: string;
     useType: string;
   };
@@ -39,7 +39,7 @@ export function getSpellText(spell: Spell, language: Language) {
       name: 'Unknown',
       description: 'No description available',
       class: 'Unknown',
-      spec: null,
+      spec: [],
       school: 'Unknown',
       useType: 'Unknown',
     };

@@ -66,9 +66,9 @@ export class SpellServiceExampleComponent {
   /**
    * Get spell spec in the current language
    */
-  getSpellSpec(spell: Spell | null | undefined): string | null {
+  getSpellSpec(spell: Spell | null | undefined): string[] {
     if (!spell) {
-      return null;
+      return [];
     }
     const language = this.localizationService.getLanguage();
     return getSpellText(spell, language).spec;
