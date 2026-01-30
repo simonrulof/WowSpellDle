@@ -44,7 +44,13 @@ export class SpellSearchComponent {
       .filter((spell) => !guessedSpellIds.has(spell.id)) // Exclude already guessed spells
       .filter((spell) => {
         const spellText = getSpellText(spell, language);
-        return spellText.name.toLowerCase().includes(query);
+        return spellText.name.toLowerCase().startsWith(query); // Only spells starting with query
+      })
+      .sort((a, b) => {
+        // Sort alphabetically by spell name
+        const nameA = getSpellText(a, language).name.toLowerCase();
+        const nameB = getSpellText(b, language).name.toLowerCase();
+        return nameA.localeCompare(nameB);
       });
   });
 
