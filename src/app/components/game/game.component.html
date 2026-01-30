@@ -78,8 +78,17 @@
                   <td class="feedback-cell" [class.correct]="guess.feedback.useType" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.type')">
                     {{ getSpellUseType(guess.spell) }}
                   </td>
-                  <td class="feedback-cell" [class.correct]="guess.feedback.cooldown === 'correct'" [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.cooldown')">
-                    {{ guess.spell.cooldown }}s
+                  <td class="feedback-cell cooldown-cell" 
+                      [class.correct]="guess.feedback.cooldown === 'correct'"
+                      [class.higher]="guess.feedback.cooldown === 'longer'"
+                      [class.lower]="guess.feedback.cooldown === 'shorter'"
+                      [attr.data-label]="uiTranslationService.getText('game.feedback.tableHeader.cooldown')">
+                    <span class="cooldown-value">{{ guess.spell.cooldown }}s</span>
+                    @if (guess.feedback.cooldown === 'longer') {
+                      <span class="cooldown-arrow">↑</span>
+                    } @else if (guess.feedback.cooldown === 'shorter') {
+                      <span class="cooldown-arrow">↓</span>
+                    }
                   </td>
                 </tr>
               }

@@ -254,6 +254,37 @@
         background-color: rgba(255, 107, 107, 0.4);
       }
     }
+
+    &.cooldown-cell {
+      position: relative;
+
+      &.higher {
+        background-color: rgba(255, 193, 7, 0.4); // Amber for "target is higher"
+      }
+
+      &.lower {
+        background-color: rgba(33, 150, 243, 0.4); // Blue for "target is lower"
+      }
+
+      .cooldown-value {
+        margin-right: 8px;
+      }
+
+      .cooldown-arrow {
+        font-size: 1.4em;
+        font-weight: bold;
+        animation: bounce 1s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
   }
 }
 
@@ -265,7 +296,7 @@
 }
 
 // Responsive design for mobile
-@media (aspect-ratio: 768px) {
+@media (max-width: 700px) {
   .guesses-table {
     font-size: 0.85em;
     /* Mobile-only: make the table background transparent so individual guess cards
@@ -355,6 +386,12 @@
           font-weight: bold;
           color: #ffd700;
           font-size: 1em;
+        }
+
+        &.cooldown-cell {
+          .cooldown-arrow {
+            margin-left: 8px;
+          }
         }
       }
     }
