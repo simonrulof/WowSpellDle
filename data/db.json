@@ -11035,13 +11035,1935 @@
       },
       "cooldown": 1,
       "iconPath": "/assets/spell-icons/ability_warrior_offensivestance.jpg"
-    }
+    },
+{
+    "id": 16864,
+    "translations": {
+        "en": {
+            "name": "Omen of Clarity",
+            "description": "Imbues the Druid with natural energy. \u00a0Each of the Druid's melee attacks [S03 - Tuning and Overrides Passive - Druid: and non-instant spell casts]has a chance of causing the caster to enter a Clearcasting state. \u00a0The Clearcasting state reduces the Mana, Rage or Energy cost of your next damage or healing spell or offensive ability by 100%. \u00a0Lasts 10 min.",
+            "class": "Druid",
+            "spec": [
+                "Balance"
+            ],
+            "school": "Nature",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Augure de clart\u00e9",
+            "description": "Impr\u00e8gne le druide ou la druidesse d\u2019\u00e9nergie naturelle. Chacune de ses attaques de m\u00eal\u00e9e [S03 \u2013 Harmonisation et remplacement de passif \u2013 Druide: et de ses incantations de sorts non instantan\u00e9s]a une chance de faire entrer le lanceur ou la lanceuse de sorts dans un \u00e9tat d\u2019Id\u00e9es claires. Cet \u00e9tat r\u00e9duit le co\u00fbt en mana, en rage ou en \u00e9nergie de votre prochain sort de d\u00e9g\u00e2t ou de soins, ou de votre prochaine technique offensive de 100\u00a0%. Dure 10 min.",
+            "class": "Druide",
+            "spec": [
+                "Balance"
+            ],
+            "school": "Nature",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_nature_crystalball.jpg"
+},
+{
+    "id": 24858,
+    "translations": {
+        "en": {
+            "name": "Moonkin Form",
+            "description": "Transforms the Druid into Moonkin Form. \u00a0While in this form the armor contribution from items is increased by 360% [S03 - Tuning and Overrides Passive - Druid: Moonfire costs 50% less mana and deals 100% more damage over time, your periodic damage spells can deal critical periodic damage, you gain (60 * 3) spell damage] and all party members within 30 yards have their spell critical chance increased by 3%. \u00a0[S03 - Tuning and Overrides Passive - Druid: The Moonkin cannot cast healing spells while shapeshifted / The Moonkin can only cast Balance spells while shapeshifted.] [Reduces all threat from Arcane and Nature spells by 0% while in this form]\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+            "class": "Druid",
+            "spec": [
+                "Balance"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Forme de s\u00e9l\u00e9nien",
+            "description": "Transforme le personnage druide en s\u00e9l\u00e9nien. Sous cette forme, l\u2019Armure conf\u00e9r\u00e9e par les objets est augment\u00e9e de 360\u00a0% [S03 \u2013 Harmonisation et remplacement de passif \u2013 Druide: \u00c9clat lunaire co\u00fbte 50\u00a0% de mana en moins et inflige 100\u00a0% de d\u00e9g\u00e2ts suppl\u00e9mentaires sur la dur\u00e9e, vos sorts de d\u00e9g\u00e2ts p\u00e9riodiques peuvent infliger des d\u00e9g\u00e2ts p\u00e9riodiques critiques, vos d\u00e9g\u00e2ts des sorts sont augment\u00e9s de (60 * 3)] et les membres du groupe \u00e0 moins de 30\u00a0m voient leurs chances de coup critique des sorts augment\u00e9es de 3\u00a0%. [S03 \u2013 Harmonisation et remplacement de passif \u2013 Druide: La forme de s\u00e9l\u00e9nien ne permet pas de lancer de sorts de soins / La forme de s\u00e9l\u00e9nien permet uniquement de lancer des sorts d\u2019\u00c9quilibre.] [R\u00e9duit la menace des sorts de nature et des arcanes de 0\u00a0% sous cette forme]\n\nLa transformation lib\u00e8re le personnage-joueur des effets de m\u00e9tamorphose ou affectant le d\u00e9placement.",
+            "class": "Druide",
+            "spec": [
+                "Balance"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_nature_forceofnature.jpg"
+},
+{
+    "id": 16689,
+    "translations": {
+        "en": {
+            "name": "Nature's Grasp",
+            "description": "While active, any time an enemy strikes the caster they have a 35% chance to become afflicted by Entangling Roots (Rank 1). \u00a0Only useable outdoors. \u00a01 charge. \u00a0Lasts 45 sec.",
+            "class": "Druid",
+            "spec": [
+                "Balance"
+            ],
+            "school": "Nature",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Emprise de la nature",
+            "description": "Pendant que cette technique est active, \u00e0 chaque fois qu'un ennemi frappe le lanceur de sorts, il a 35% de chances d'\u00eatre victime du sort Sarments (Rang 1). Ne fonctionne qu'en ext\u00e9rieur. 1 charges. Dure 45 sec.",
+            "class": "Druide",
+            "spec": [
+                "Balance"
+            ],
+            "school": "Nature",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 60,
+    "iconPath": "/assets/spell-icons/spell_nature_natureswrath.jpg"
+},
+{
+    "id": 16857,
+    "translations": {
+        "en": {
+            "name": "Faerie Fire (Feral)",
+            "description": "Decrease the armor of the target by 175 for 40 sec. \u00a0While affected, the target cannot stealth or turn invisible.",
+            "class": "Druid",
+            "spec": [
+                "Feral"
+            ],
+            "school": "Nature",
+            "useType": "Debuff"
+        },
+        "fr": {
+            "name": "Lucioles (farouche)",
+            "description": "R\u00e9duit l'Armure de la cible de 175 pendant 40 sec. Tant qu'elle est affect\u00e9e, la cible ne peut pas se camoufler ni se rendre invisible.",
+            "class": "Druide",
+            "spec": [
+                "Feral"
+            ],
+            "school": "Nature",
+            "useType": "Affaiblissement"
+        }
+    },
+    "cooldown": 6,
+    "iconPath": "/assets/spell-icons/spell_nature_faeriefire.jpg"
+},
+{
+    "id": 16979,
+    "translations": {
+        "en": {
+            "name": "Feral Charge",
+            "description": "Causes you to charge an enemy, immobilizing and interrupting any spell being cast for 4 sec.",
+            "class": "Druid",
+            "spec": [
+                "Feral"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Charge farouche",
+            "description": "Vous chargez un ennemi, stoppez son d\u00e9placement et interrompez le sort qu'il incantait pendant 4 sec.",
+            "class": "Druide",
+            "spec": [
+                "Feral"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 15,
+    "iconPath": "/assets/spell-icons/ability_hunter_pet_bear.jpg"
+},
+{
+    "id": 18562,
+    "translations": {
+        "en": {
+            "name": "Swiftmend",
+            "description": "[S03 - Tuning and Overrides Passive - Druid: Instantly heals a target with an active Rejuvenation or Regrowth effect for / Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them] an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth.",
+            "class": "Druid",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Nature",
+            "useType": "Healing"
+        },
+        "fr": {
+            "name": "Prompte gu\u00e9rison",
+            "description": "[S03 \u2013 Harmonisation et remplacement de passif \u2013 Druide: Soigne instantan\u00e9ment une cible avec un effet de R\u00e9cup\u00e9ration ou de R\u00e9tablissement pour lui rendre / Consomme un effet de R\u00e9cup\u00e9ration ou de R\u00e9tablissement sur une cible alli\u00e9e pour lui rendre instantan\u00e9ment] le montant de points de vie \u00e9quivalent \u00e0 12\u00a0s de R\u00e9cup\u00e9ration ou 18\u00a0s de R\u00e9tablissement.",
+            "class": "Druide",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Nature",
+            "useType": "Soin"
+        }
+    },
+    "cooldown": 15,
+    "iconPath": "/assets/spell-icons/inv_relics_idolofrejuvenation.jpg"
+},
+{
+    "id": 17116,
+    "translations": {
+        "en": {
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell becomes an instant cast spell.",
+            "class": "Druid",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Rapidit\u00e9 de la nature",
+            "description": "Lorsque cette technique est activ\u00e9e, votre prochain sort de Nature devient un sort instantan\u00e9.",
+            "class": "Druide",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_nature_ravenform.jpg"
+},
+{
+    "id": 5570,
+    "translations": {
+        "en": {
+            "name": "Insect Swarm",
+            "description": "The enemy target is swarmed by insects, decreasing their chance to hit by 2% and causing 66 Nature damage over 12 sec.",
+            "class": "Druid",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Nature",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Essaim d'insectes",
+            "description": "La cible ennemie est assaillie par des insectes. Ses chances de toucher sont diminu\u00e9es de 2% et elle subit 66 points de d\u00e9g\u00e2ts de Nature en 12 sec.",
+            "class": "Druide",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Nature",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_nature_insectswarm.jpg"
+},
+{
+    "id": 19574,
+    "translations": {
+        "en": {
+            "name": "Bestial Wrath",
+            "description": "Send your pet into a rage causing 50% additional damage for 18 sec. \u00a0While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+            "class": "Hunter",
+            "spec": [
+                "BeastMastery"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Courroux bestial",
+            "description": "Votre familier, fou de rage, inflige 50% points de d\u00e9g\u00e2ts suppl\u00e9mentaires pendant 18 sec. Lorsqu\u2019il est dans cet \u00e9tat, il n'\u00e9prouve ni piti\u00e9, ni remords, ni peur et ne peut plus \u00eatre arr\u00eat\u00e9 \u00e0 moins d'\u00eatre tu\u00e9.",
+            "class": "Chasseur",
+            "spec": [
+                "BeastMastery"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 120,
+    "iconPath": "/assets/spell-icons/ability_druid_ferociousbite.jpg"
+},
+{
+    "id": 19577,
+    "translations": {
+        "en": {
+            "name": "Intimidation",
+            "description": "Command your pet to intimidate the target on the next successful melee attack, causing a high amount of threat and stunning the target for 3 sec.",
+            "class": "Hunter",
+            "spec": [
+                "BeastMastery"
+            ],
+            "school": "Nature",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Intimidation",
+            "description": "Ordonne \u00e0 votre familier d'intimider la cible \u00e0 la prochaine attaque en m\u00eal\u00e9e r\u00e9ussie, g\u00e9n\u00e9rant un haut niveau de menace et \u00e9tourdissant la cible pendant 3 sec.",
+            "class": "Chasseur",
+            "spec": [
+                "BeastMastery"
+            ],
+            "school": "Nature",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 60,
+    "iconPath": "/assets/spell-icons/ability_devour.jpg"
+},
+{
+    "id": 19434,
+    "translations": {
+        "en": {
+            "name": "Aimed Shot",
+            "description": "An aimed shot that increases ranged damage by 70.",
+            "class": "Hunter",
+            "spec": [
+                "Marksmanship"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Vis\u00e9e",
+            "description": "Un tir pr\u00e9cis qui augmente les points de d\u00e9g\u00e2ts inflig\u00e9s par votre attaque \u00e0 distance de 70.",
+            "class": "Chasseur",
+            "spec": [
+                "Marksmanship"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 6,
+    "iconPath": "/assets/spell-icons/inv_spear_07.jpg"
+},
+{
+    "id": 19503,
+    "translations": {
+        "en": {
+            "name": "Scatter Shot",
+            "description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. \u00a0Any damage caused will remove the effect. \u00a0Turns off your attack when used.",
+            "class": "Hunter",
+            "spec": [
+                "Marksmanship"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Fl\u00e8che de dispersion",
+            "description": "Un tir \u00e0 courte distance qui inflige 50% des points de d\u00e9g\u00e2ts de l'arme et d\u00e9soriente la cible pendant 4 sec. Si la cible subit des d\u00e9g\u00e2ts, l'effet est annul\u00e9. Interrompt l'attaque lors de son utilisation.",
+            "class": "Chasseur",
+            "spec": [
+                "Marksmanship"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 30,
+    "iconPath": "/assets/spell-icons/ability_golemstormbolt.jpg"
+},
+{
+    "id": 19506,
+    "translations": {
+        "en": {
+            "name": "Trueshot Aura",
+            "description": "Increases the [S03 - Tuning and Overrides Passive - Hunter: ranged]attack power of party members within 45 yards by 50 [S03 - Tuning and Overrides Passive - Hunter: and the Hunter's ranged attack power by an additional 100]. \u00a0Lasts 30 min.",
+            "class": "Hunter",
+            "spec": [
+                "Marksmanship"
+            ],
+            "school": "Arcane",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Aura de pr\u00e9cision",
+            "description": "Augmente la puissance d\u2019attaque [S03 \u2013 Harmonisation et remplacement de passif \u2013 Chasseur ou chasseresse: \u00e0 distance]des membres du groupe qui se trouvent dans un rayon de 45\u00a0m de 50 [S03 \u2013 Harmonisation et remplacement de passif \u2013 Chasseur ou chasseresse: et augmente la puissance d\u2019attaque \u00e0 distance du personnage chasseur de 100\u00a0suppl\u00e9mentaires]. Dure 30 min.",
+            "class": "Chasseur",
+            "spec": [
+                "Marksmanship"
+            ],
+            "school": "Arcane",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/ability_trueshot.jpg"
+},
+{
+    "id": 19263,
+    "translations": {
+        "en": {
+            "name": "Deterrence",
+            "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
+            "class": "Hunter",
+            "spec": [
+                "Survival"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Dissuasion",
+            "description": "Une fois activ\u00e9, augmente vos chances d'Esquiver et de Parer de 25% pendant 10 sec.",
+            "class": "Chasseur",
+            "spec": [
+                "Survival"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 300,
+    "iconPath": "/assets/spell-icons/ability_whirlwind.jpg"
+},
+{
+    "id": 19306,
+    "translations": {
+        "en": {
+            "name": "Counterattack",
+            "description": "A strike that becomes active after parrying an opponent's attack. \u00a0This attack deals 40 damage and immobilizes the target for 5 sec. \u00a0Counterattack cannot be blocked, dodged, or parried.",
+            "class": "Hunter",
+            "spec": [
+                "Survival"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Contre-attaque",
+            "description": "Une attaque disponible apr\u00e8s avoir par\u00e9 une attaque de l'adversaire. Elle inflige 40 points de d\u00e9g\u00e2ts et immobilise la cible pendant 5 sec. Contre-attaque ne peut pas \u00eatre bloqu\u00e9e, esquiv\u00e9e ou par\u00e9e.",
+            "class": "Chasseur",
+            "spec": [
+                "Survival"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 5,
+    "iconPath": "/assets/spell-icons/ability_warrior_challange.jpg"
+},
+{
+    "id": 19386,
+    "translations": {
+        "en": {
+            "name": "Wyvern Sting",
+            "description": "A stinging shot that puts the target to sleep for 12 sec. \u00a0Any damage will cancel the effect. \u00a0When the target wakes up, the Sting causes 300 Nature damage over 6 sec. \u00a0Only usable out of combat. \u00a0Only one Sting per Hunter can be active on the target at a time.",
+            "class": "Hunter",
+            "spec": [
+                "Survival"
+            ],
+            "school": "Nature",
+            "useType": "CC"
+        },
+        "fr": {
+            "name": "Piq\u00fbre de wyverne",
+            "description": "Une piq\u00fbre qui endort la cible pendant 12 sec. Tout point de d\u00e9g\u00e2ts subi par la cible annule l\u2019effet. Quand la cible se r\u00e9veille, la Piq\u00fbre inflige 300\u00a0points de d\u00e9g\u00e2ts de nature en 6 sec. Utilisable uniquement hors de combat. Une seule technique de Morsure ou de Piq\u00fbre par chasseur ou chasseresse peut \u00eatre active sur la cible en m\u00eame temps.",
+            "class": "Chasseur",
+            "spec": [
+                "Survival"
+            ],
+            "school": "Nature",
+            "useType": "Contrôle"
+        }
+    },
+    "cooldown": 120,
+    "iconPath": "/assets/spell-icons/inv_spear_02.jpg"
+},
+{
+    "id": 12043,
+    "translations": {
+        "en": {
+            "name": "Presence of Mind",
+            "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
+            "class": "Mage",
+            "spec": [
+                "Arcane"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Pr\u00e9sence spirituelle",
+            "description": "Lorsque cette technique est activ\u00e9e, votre prochain sort de mage dont le temps d'incantation est inf\u00e9rieur \u00e0 10 sec. devient un sort instantan\u00e9.",
+            "class": "Mage",
+            "spec": [
+                "Arcane"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_nature_enchantarmor.jpg"
+},
+{
+    "id": 12042,
+    "translations": {
+        "en": {
+            "name": "Arcane Power",
+            "description": "When activated, your spells deal 30% more damage while costing 30% more mana to cast. \u00a0This effect lasts 15 sec.",
+            "class": "Mage",
+            "spec": [
+                "Arcane"
+            ],
+            "school": "Arcane",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Pouvoir des arcanes",
+            "description": "Lorsqu'il est activ\u00e9, vos sorts infligent 30% de points de d\u00e9g\u00e2ts suppl\u00e9mentaires et ils vous co\u00fbtent 30% de points de mana suppl\u00e9mentaires. Cet effet dure 15 sec.",
+            "class": "Mage",
+            "spec": [
+                "Arcane"
+            ],
+            "school": "Arcane",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_nature_lightning.jpg"
+},
+{
+    "id": 11366,
+    "translations": {
+        "en": {
+            "name": "Pyroblast",
+            "description": "Hurls an immense fiery boulder that causes 148 to 195 Fire damage and an additional 56 Fire damage over 12 sec.",
+            "class": "Mage",
+            "spec": [
+                "Fire"
+            ],
+            "school": "Fire",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Explosion pyrotechnique",
+            "description": "Lance un immense rocher enflamm\u00e9 qui inflige 148 \u00e0 195 points de d\u00e9g\u00e2ts de Feu et 56 points de d\u00e9g\u00e2ts de Feu suppl\u00e9mentaires en 12 sec.",
+            "class": "Mage",
+            "spec": [
+                "Fire"
+            ],
+            "school": "Feu",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_fire_fireball02.jpg"
+},
+{
+    "id": 11129,
+    "translations": {
+        "en": {
+            "name": "Combustion",
+            "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. \u00a0This effect lasts until you have caused 3 critical strikes with Fire spells.",
+            "class": "Mage",
+            "spec": [
+                "Fire"
+            ],
+            "school": "Fire",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Combustion",
+            "description": "Lorsqu'il est activ\u00e9, ce sort augmente vos chances de coup critique avec les sorts de d\u00e9g\u00e2ts de Feu de 10% chaque fois que vous touchez avec un sort de ce type. Cet effet dure jusqu'\u00e0 ce que vous ayez inflig\u00e9 3 coups critiques avec des sorts de Feu.",
+            "class": "Mage",
+            "spec": [
+                "Fire"
+            ],
+            "school": "Feu",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_fire_sealoffire.jpg"
+},
+{
+    "id": 11113,
+    "translations": {
+        "en": {
+            "name": "Blast Wave",
+            "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 160 to 192 Fire damage, and dazing them for 6 sec.",
+            "class": "Mage",
+            "spec": [
+                "Fire"
+            ],
+            "school": "Fire",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Vague explosive",
+            "description": "Une vague de flammes rayonne autour du lanceur et inflige \u00e0 tous les ennemis pris dans l'explosion 160 \u00e0 192 points de d\u00e9g\u00e2ts de Feu, en plus de les h\u00e9b\u00e9ter pendant 6 sec.",
+            "class": "Mage",
+            "spec": [
+                "Fire"
+            ],
+            "school": "Feu",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 45,
+    "iconPath": "/assets/spell-icons/spell_holy_excorcism_02.jpg"
+},
+{
+    "id": 11958,
+    "translations": {
+        "en": {
+            "name": "Ice Block",
+            "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move or cast spells.",
+            "class": "Mage",
+            "spec": [
+                "Frost"
+            ],
+            "school": "Frost",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Bloc de glace",
+            "description": "Vous enveloppe dans un bloc de glace qui vous prot\u00e8ge des attaques physiques et des sorts pendant 10 sec. En contrepartie, vous ne pouvez pas attaquer, vous d\u00e9placer ni lancer de sorts.",
+            "class": "Mage",
+            "spec": [
+                "Frost"
+            ],
+            "school": "Givre",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 300,
+    "iconPath": "/assets/spell-icons/spell_frost_frost.jpg"
+},
+{
+    "id": 12472,
+    "translations": {
+        "en": {
+            "name": "Cold Snap",
+            "description": "When activated, this spell finishes the cooldown on all of your Frost spells.",
+            "class": "Mage",
+            "spec": [
+                "Frost"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Morsure du froid",
+            "description": "\u00c0 l\u2019activation, met fin au temps de recharge de tous vos sorts de givre.",
+            "class": "Mage",
+            "spec": [
+                "Frost"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 600,
+    "iconPath": "/assets/spell-icons/spell_frost_wizardmark.jpg"
+},
+{
+    "id": 11426,
+    "translations": {
+        "en": {
+            "name": "Ice Barrier",
+            "description": "Instantly shields you, absorbing 455 damage. \u00a0Lasts 1 min. \u00a0While the shield holds, spells will not be interrupted.",
+            "class": "Mage",
+            "spec": [
+                "Frost"
+            ],
+            "school": "Frost",
+            "useType": "Healing"
+        },
+        "fr": {
+            "name": "Barri\u00e8re de glace",
+            "description": "Vous prot\u00e8ge instantan\u00e9ment \u00e0 l'aide d'un bouclier magique qui absorbe 455 points de d\u00e9g\u00e2ts. Dure 1 min. Tant que le bouclier est actif, les sorts ne sont pas interrompus.",
+            "class": "Mage",
+            "spec": [
+                "Frost"
+            ],
+            "school": "Givre",
+            "useType": "Soin"
+        }
+    },
+    "cooldown": 30,
+    "iconPath": "/assets/spell-icons/spell_ice_lament.jpg"
+},
+{
+    "id": 26573,
+    "translations": {
+        "en": {
+            "name": "Consecration",
+            "description": "Consecrates the land beneath Paladin, doing 64 Holy damage over 8 sec to enemies who enter the area.",
+            "class": "Paladin",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Holy",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Cons\u00e9cration",
+            "description": "Consacre le sol qui se trouve autour du paladin et inflige 64 points de d\u00e9g\u00e2ts en 8 sec aux ennemis qui entrent dans la zone.",
+            "class": "Paladin",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 8,
+    "iconPath": "/assets/spell-icons/spell_holy_innerfire.jpg"
+},
+{
+    "id": 20473,
+    "translations": {
+        "en": {
+            "name": "Holy Shock",
+            "description": "Blasts the target with Holy energy, causing 204 to 220 Holy damage to an enemy, or 204 to 220 healing to an ally.",
+            "class": "Paladin",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Holy",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Horion sacr\u00e9",
+            "description": "L'\u00e9nergie sacr\u00e9e frappe la cible et inflige 204 \u00e0 220 points de d\u00e9g\u00e2ts du Sacr\u00e9 \u00e0 un ennemi, ou bien rend \u00e0 un alli\u00e9 204 \u00e0 220 points de vie.",
+            "class": "Paladin",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 30,
+    "iconPath": "/assets/spell-icons/spell_holy_searinglight.jpg"
+},
+{
+    "id": 20216,
+    "translations": {
+        "en": {
+            "name": "Divine Favor",
+            "description": "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance.",
+            "class": "Paladin",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Faveur divine",
+            "description": "Une fois activ\u00e9, conf\u00e8re 100% de chances \u00e0 votre prochain sort Eclair lumineux, Lumi\u00e8re sacr\u00e9e ou Horion sacr\u00e9 d'avoir un effet critique.",
+            "class": "Paladin",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 120,
+    "iconPath": "/assets/spell-icons/spell_holy_heal.jpg"
+},
+{
+    "id": 20217,
+    "translations": {
+        "en": {
+            "name": "Blessing of Kings",
+            "description": "Places a Blessing on the friendly target, increasing total stats by 10% for 5 min. \u00a0Players may only have one Blessing on them per Paladin at any one time.",
+            "class": "Paladin",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "B\u00e9n\u00e9diction des rois",
+            "description": "Place une B\u00e9n\u00e9diction sur une cible amie qui augmente toutes ses caract\u00e9ristiques de 10% pendant 5 min. Les joueurs ne peuvent b\u00e9n\u00e9ficier des effets que d'une seule B\u00e9n\u00e9diction par paladin \u00e0 la fois.",
+            "class": "Paladin",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration" 
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_magic_magearmor.jpg"
+},
+{
+    "id": 20925,
+    "translations": {
+        "en": {
+            "name": "Holy Shield",
+            "description": "Increases chance to block by 30% for 10 sec, and deals 65 Holy damage for each attack blocked while active. \u00a0Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges. [S03 - Tuning and Overrides Passive - All Classes: Activating Holy Shield also grants you 2 Spell Power for each point of your defense skill beyond (60 * 5). Lasts 15 sec]",
+            "class": "Paladin",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Bouclier sacr\u00e9",
+            "description": "Augmente les chances de bloquer de 30\u00a0% pendant 10 sec et inflige 65\u00a0points de d\u00e9g\u00e2ts du sacr\u00e9 par attaque bloqu\u00e9e pendant que l\u2019effet est actif. Les d\u00e9g\u00e2ts de Bouclier sacr\u00e9 g\u00e9n\u00e8rent 20\u00a0% de menace suppl\u00e9mentaire. Chaque blocage d\u00e9pense une charge. 4\u00a0charges. [S03 \u2013 Harmonisation et remplacement de passif \u2013 Toutes les classes: Activer Bouclier sacr\u00e9 vous conf\u00e8re \u00e9galement 2 \u00e0 la puissance des sorts par point de d\u00e9fense au-del\u00e0 de (60 * 5). Dure 15 sec]",
+            "class": "Paladin",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 10,
+    "iconPath": "/assets/spell-icons/classic_spell_holy_blessingofprotection.jpg"
+},
+{
+    "id": 20911,
+    "translations": {
+        "en": {
+            "name": "Blessing of Sanctuary",
+            "description": "Places a Blessing on the friendly target, reducing damage dealt from all sources by up to 10 for 5 min. \u00a0In addition, when the target blocks a melee attack the attacker will take 14 Holy damage. \u00a0Players may only have one Blessing on them per Paladin at any one time.",
+            "class": "Paladin",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "B\u00e9n\u00e9diction du sanctuaire",
+            "description": "Place une B\u00e9n\u00e9diction sur la cible amie. R\u00e9duit les points de d\u00e9g\u00e2ts de tous types qu'elle subit d\u2019un maximum de 10 pendant 5 min. De plus, quand la cible bloque une attaque de m\u00eal\u00e9e, l'attaquant subit 14 points de d\u00e9g\u00e2ts du Sacr\u00e9. Les personnages ne peuvent b\u00e9n\u00e9ficier que des effets d'une seule B\u00e9n\u00e9diction par paladin \u00e0 la fois.",
+            "class": "Paladin",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_nature_lightningshield.jpg"
+},
+{
+    "id": 20375,
+    "translations": {
+        "en": {
+            "name": "Seal of Command",
+            "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage. \u00a0Only one Seal can be active on the Paladin at any one time. \u00a0Lasts 30 sec.\n\nUnleashing this Seal's energy will judge an enemy, instantly causing 68 to 73 Holy damage, 137 to 146 if the target is stunned or incapacitated.",
+            "class": "Paladin",
+            "spec": [
+                "Retribution"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Sceau d'autorit\u00e9",
+            "description": "Conf\u00e8re au paladin une chance d'infliger un nombre de points de d\u00e9g\u00e2ts du Sacr\u00e9 suppl\u00e9mentaires \u00e9quivalent \u00e0 70% des d\u00e9g\u00e2ts normaux de l'arme. Un seul Sceau peut \u00eatre actif sur le paladin \u00e0 la fois. \u00a0Dure 30 sec.\n\nLib\u00e9rez l'\u00e9nergie de ce Sceau pour juger un ennemi et lui infliger instantan\u00e9ment 68 \u00e0 73 points de d\u00e9g\u00e2ts du Sacr\u00e9, ou 137 \u00e0 146 si la cible est \u00e9tourdie ou stup\u00e9fi\u00e9e.",
+            "class": "Paladin",
+            "spec": [
+                "Retribution"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/ability_warrior_innerrage.jpg"
+},
+{
+    "id": 20218,
+    "translations": {
+        "en": {
+            "name": "Sanctity Aura",
+            "description": "Increases Holy damage done by party members within 30 yards by 10%. \u00a0Players may only have one Aura on them per Paladin at any one time.",
+            "class": "Paladin",
+            "spec": [
+                "Retribution"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Aura de saintet\u00e9",
+            "description": "Augmente de 10% les points de d\u00e9g\u00e2ts du Sacr\u00e9 inflig\u00e9s par les membres du groupe se trouvant dans une zone de 30 m\u00e8tres de rayon. Les personnages ne peuvent b\u00e9n\u00e9ficier des effets que d'une aura par paladin \u00e0 la fois.",
+            "class": "Paladin",
+            "spec": [
+                "Retribution"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_holy_mindvision.jpg"
+},
+{
+    "id": 20066,
+    "translations": {
+        "en": {
+            "name": "Repentance",
+            "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. \u00a0Any damage caused will awaken the target. \u00a0Only works against Humanoids.",
+            "class": "Paladin",
+            "spec": [
+                "Retribution"
+            ],
+            "school": "Holy",
+            "useType": "CC"
+        },
+        "fr": {
+            "name": "Repentir",
+            "description": "Plonge la cible ennemie dans une transe m\u00e9ditative qui la stup\u00e9fie pendant 6 sec au maximum. Si la cible subit des d\u00e9g\u00e2ts, elle se r\u00e9veille. Ne fonctionne que contre les Humano\u00efdes.",
+            "class": "Paladin",
+            "spec": [
+                "Retribution"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Contrôle"
+        }
+    },
+    "cooldown": 60,
+    "iconPath": "/assets/spell-icons/spell_holy_prayerofhealing.jpg"
+},
+{
+    "id": 14752,
+    "translations": {
+        "en": {
+            "name": "Divine Spirit",
+            "description": "Holy power infuses the target, increasing their Spirit by 17 for 30 min.",
+            "class": "Priest",
+            "spec": [
+                "Discipline"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Esprit divin",
+            "description": "La puissance sacr\u00e9e envahit le corps de la cible et augmente son Esprit de 17 pendant 30 min.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Discipline"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_holy_divinespirit.jpg"
+},
+{
+    "id": 10060,
+    "translations": {
+        "en": {
+            "name": "Power Infusion",
+            "description": "Infuses the target with power, increasing their spell damage and healing by 20%. \u00a0Lasts 15 sec.",
+            "class": "Priest",
+            "spec": [
+                "Discipline"
+            ],
+            "school": "Holy",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Infusion de puissance",
+            "description": "Impr\u00e8gne la cible de puissance, ce qui augmente de 20% les d\u00e9g\u00e2ts et les soins qu'elle produit avec des sorts. Dure 15 sec.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Discipline"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_holy_powerinfusion.jpg"
+},
+{
+    "id": 14751,
+    "translations": {
+        "en": {
+            "name": "Inner Focus",
+            "description": "When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is capable of a critical effect.",
+            "class": "Priest",
+            "spec": [
+                "Discipline"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Focalisation am\u00e9lior\u00e9e",
+            "description": "Lorsqu'elle est activ\u00e9e, cette technique r\u00e9duit de 100% le co\u00fbt en mana de votre prochain sort et augmente ses chances d'infliger un effet critique de 25%, si cela est possible.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Discipline"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_frost_windwalkon.jpg"
+},
+{
+    "id": 15237,
+    "translations": {
+        "en": {
+            "name": "Holy Nova",
+            "description": "Causes an explosion of holy light around the caster, causing 29 to 34 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 54 to 63. \u00a0These effects cause no threat.",
+            "class": "Priest",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Holy",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Nova sacr\u00e9e",
+            "description": "Provoque une explosion de lumi\u00e8re sacr\u00e9e autour du lanceur de sorts. Elle inflige 29 \u00e0 34 points de d\u00e9g\u00e2ts du Sacr\u00e9 \u00e0 toutes les cibles ennemies dans une zone de 10 m\u00e8tres et rend 54 \u00e0 63 points de vie \u00e0 tous les membres du groupe dans une zone de 10 m\u00e8tres. Ces effets ne modifient pas le niveau de menace.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_holy_holynova.jpg"
+},
+{
+    "id": 724,
+    "translations": {
+        "en": {
+            "name": "Lightwell",
+            "description": "Creates a holy Lightwell near the priest. \u00a0Members of your raid or party can click the Lightwell to restore 800 health over 10 sec. \u00a0Being attacked cancels the effect. \u00a0Lightwell lasts for 3 min or 5 charges.",
+            "class": "Priest",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Holy",
+            "useType": "Summon"
+        },
+        "fr": {
+            "name": "Puits de lumi\u00e8re",
+            "description": "Cr\u00e9e un Puits de lumi\u00e8re sacr\u00e9 pr\u00e8s du pr\u00eatre. Les membres du groupe ou du raid peuvent cliquer sur le Puits de lumi\u00e8re pour recevoir 800 points de vie en 10 sec. L'effet est annul\u00e9 si vous \u00eates attaqu\u00e9. La dur\u00e9e du Puits de lumi\u00e8re est de 3 min ou bien 5 utilisations.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Holy"
+            ],
+            "school": "Sacr\u00e9",
+            "useType": "Invocation"
+        }
+    },
+    "cooldown": 600,
+    "iconPath": "/assets/spell-icons/spell_holy_summonlightwell.jpg"
+},
+{
+    "id": 15407,
+    "translations": {
+        "en": {
+            "name": "Mind Flay",
+            "description": "Assault the target's mind with Shadow energy, causing 75 Shadow damage over 3 sec and slowing their movement speed by 50%.",
+            "class": "Priest",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Shadow",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Fouet mental",
+            "description": "Attaque l\u2019esprit de la cible avec l\u2019\u00e9nergie de l\u2019ombre. Inflige 75\u00a0points de d\u00e9g\u00e2ts d\u2019ombre en 3 sec et r\u00e9duit la vitesse de la cible de 50\u00a0%.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Ombre",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_siphonmana.jpg"
+},
+{
+    "id": 15473,
+    "translations": {
+        "en": {
+            "name": "Shadowform",
+            "description": "Assume a Shadowform, increasing your Shadow damage by 15% [S03 - Tuning and Overrides Passive - Priest: reducing the mana cost of all Shadow spells by 0%] and reducing Physical damage done to you by 15%. \u00a0However, you may not cast Holy spells while in this form.",
+            "class": "Priest",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Shadow",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Forme d'Ombre",
+            "description": "Permet d\u2019adopter une forme d\u2019ombre qui augmente de 15\u00a0% les d\u00e9g\u00e2ts d\u2019ombre inflig\u00e9s [S03 \u2013 Harmonisation et remplacement de passif \u2013 Pr\u00eatre ou pr\u00eatresse: r\u00e9duit le co\u00fbt en mana des sorts d\u2019ombre de 0\u00a0%] et r\u00e9duit les d\u00e9g\u00e2ts physiques subis de 15\u00a0%, mais emp\u00eache de lancer des sorts du sacr\u00e9.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Ombre",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 1,
+    "iconPath": "/assets/spell-icons/spell_shadow_shadowform.jpg"
+},
+{
+    "id": 15286,
+    "translations": {
+        "en": {
+            "name": "Vampiric Embrace",
+            "description": "Afflicts your target with Shadow energy that causes all party members to be healed for 20% of any Shadow spell damage you deal for 1 min.",
+            "class": "Priest",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Shadow",
+            "useType": "Debuff"
+        },
+        "fr": {
+            "name": "Etreinte vampirique",
+            "description": "Lib\u00e8re sur votre cible l\u2019\u00e9nergie de l\u2019ombre, qui soigne tous les personnages de votre groupe de 20\u00a0% de tous les d\u00e9g\u00e2ts de sorts d\u2019ombre que vous infligez pendant 1 min.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Ombre",
+            "useType": "Affaiblissement"
+        }
+    },
+    "cooldown": 10,
+    "iconPath": "/assets/spell-icons/spell_shadow_unsummonbuilding.jpg"
+},
+{
+    "id": 15487,
+    "translations": {
+        "en": {
+            "name": "Silence",
+            "description": "Silences the target, preventing them from casting spells for 5 sec.",
+            "class": "Priest",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Shadow",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Silence",
+            "description": "Rend la cible silencieuse, l'emp\u00eachant de lancer des sorts pendant 5 sec.",
+            "class": "Pr\u00eatre",
+            "spec": [
+                "Shadow"
+            ],
+            "school": "Ombre",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 45,
+    "iconPath": "/assets/spell-icons/spell_shadow_impphaseshift.jpg"
+},
+{
+    "id": 14177,
+    "translations": {
+        "en": {
+            "name": "Cold Blood",
+            "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, or Eviscerate by 100%.",
+            "class": "Rogue",
+            "spec": [
+                "Assassination"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Sang froid",
+            "description": "Lorsque vous d\u00e9clenchez ce talent, vos chances d'infliger un coup critique lors de votre prochaine Attaque pernicieuse, Attaque sournoise, Embuscade ou Evisc\u00e9ration augmentent de 100%.",
+            "class": "Voleur",
+            "spec": [
+                "Assassination"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_ice_lament.jpg"
+},
+{
+    "id": 13877,
+    "translations": {
+        "en": {
+            "name": "Blade Flurry",
+            "description": "Increases your attack speed by 20%. \u00a0In addition, attacks strike an additional nearby opponent. \u00a0Lasts 15 sec.",
+            "class": "Rogue",
+            "spec": [
+                "Combat"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "D\u00e9luge de lames",
+            "description": "Augmente votre vitesse d'attaque de 20%. De plus, vos attaques frappent un adversaire proche suppl\u00e9mentaire. Dure 15 sec.",
+            "class": "Voleur",
+            "spec": [
+                "Combat"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 120,
+    "iconPath": "/assets/spell-icons/ability_warrior_punishingblow.jpg"
+},
+{
+    "id": 14251,
+    "translations": {
+        "en": {
+            "name": "Riposte",
+            "description": "A strike that becomes active after parrying an opponent's attack. \u00a0This attack deals 150% weapon damage and disarms the target for 6 sec.",
+            "class": "Rogue",
+            "spec": [
+                "Combat"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Riposte",
+            "description": "Une attaque disponible apr\u00e8s avoir par\u00e9 une attaque de l'adversaire. Elle inflige 150% des d\u00e9g\u00e2ts de l'arme et d\u00e9sarme la cible pendant 6 sec.",
+            "class": "Voleur",
+            "spec": [
+                "Combat"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 6,
+    "iconPath": "/assets/spell-icons/ability_warrior_challange.jpg"
+},
+{
+    "id": 13750,
+    "translations": {
+        "en": {
+            "name": "Adrenaline Rush",
+            "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
+            "class": "Rogue",
+            "spec": [
+                "Combat"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Pouss\u00e9e d'adr\u00e9naline",
+            "description": "Augmente la vitesse de r\u00e9g\u00e9n\u00e9ration de votre Energie de 100% pendant 15 sec.",
+            "class": "Voleur",
+            "spec": [
+                "Combat"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 300,
+    "iconPath": "/assets/spell-icons/spell_shadow_shadowworddominate.jpg"
+},
+{
+    "id": 16511,
+    "translations": {
+        "en": {
+            "name": "Hemorrhage",
+            "description": "An instant strike that damages the opponent and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 3. \u00a0Lasts 30 charges or 15 sec. \u00a0Awards 1 combo point.",
+            "class": "Rogue",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "H\u00e9morragie",
+            "description": "Une frappe instantan\u00e9e qui inflige des d\u00e9g\u00e2ts \u00e0 l'adversaire et provoque une h\u00e9morragie. Augmente tous les d\u00e9g\u00e2ts physiques inflig\u00e9s \u00e0 la cible de 3 au maximum. Utilisable 30 fois ou pendant 15 sec. Vous gagnez 1 point de combo.",
+            "class": "Voleur",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_lifedrain.jpg"
+},
+{
+    "id": 14185,
+    "translations": {
+        "en": {
+            "name": "Preparation",
+            "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
+            "class": "Rogue",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Pr\u00e9paration",
+            "description": "Lorsque vous la d\u00e9clenchez, cette technique annule le temps de recharge de toutes vos autres techniques de voleur.",
+            "class": "Voleur",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 600,
+    "iconPath": "/assets/spell-icons/spell_shadow_antishadow.jpg"
+},
+{
+    "id": 14183,
+    "translations": {
+        "en": {
+            "name": "Premeditation",
+            "description": "When used, adds 2 combo points to your target. \u00a0You must add to or use those combo points within 10 sec or the combo points are lost.",
+            "class": "Rogue",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Pr\u00e9m\u00e9ditation",
+            "description": "Lorsqu'elle est utilis\u00e9e, cette technique ajoute 2 points de combo \u00e0 la cible. Vous devez ajouter \u00e0 ces points de combo ou les utiliser avant 10 sec sinon les points de combo sont perdus.",
+            "class": "Voleur",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 120,
+    "iconPath": "/assets/spell-icons/spell_shadow_possession.jpg"
+},
+{
+    "id": 14278,
+    "translations": {
+        "en": {
+            "name": "Ghostly Strike",
+            "description": "A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec. \u00a0Awards 1 combo point.",
+            "class": "Rogue",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Frappe fantomatique",
+            "description": "Une attaque qui inflige 125% des d\u00e9g\u00e2ts de l'arme et qui augmente vos chances d'esquiver de 15% pendant 7 sec. Vous gagnez 1 point de combo.",
+            "class": "Voleur",
+            "spec": [
+                "Subtlety"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 20,
+    "iconPath": "/assets/spell-icons/spell_shadow_curse.jpg"
+},
+{
+    "id": 16166,
+    "translations": {
+        "en": {
+            "name": "Elemental Mastery",
+            "description": "When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance and reduces the mana cost by 100%.",
+            "class": "Shaman",
+            "spec": [
+                "Elemental"
+            ],
+            "school": "Nature",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Ma\u00eetrise \u00e9l\u00e9mentaire",
+            "description": "Lorsqu'il est activ\u00e9, ce sort conf\u00e8re 100% de chances \u00e0 vos sorts de Feu, de Givre et de Nature d'infliger un coup critique et il r\u00e9duit le co\u00fbt en mana de 100%.",
+            "class": "Chaman",
+            "spec": [
+                "Elemental"
+            ],
+            "school": "Nature",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_nature_wispheal.jpg"
+},
+{
+    "id": 17364,
+    "translations": {
+        "en": {
+            "name": "Stormstrike",
+            "description": "Gives you an extra attack. \u00a0In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. \u00a0Lasts 12 sec.",
+            "class": "Shaman",
+            "spec": [
+                "Enhancement"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Stormstrike",
+            "description": "Donne une attaque suppl\u00e9mentaire. De plus, les deux prochaines sources de d\u00e9g\u00e2ts de nature inflig\u00e9s \u00e0 la cible sont augment\u00e9es de 20\u00a0%. Dure 12 sec.",
+            "class": "Chaman",
+            "spec": [
+                "Enhancement"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 20,
+    "iconPath": "/assets/spell-icons/spell_holy_sealofmight.jpg"
+},
+{
+    "id": 18265,
+    "translations": {
+        "en": {
+            "name": "Siphon Life",
+            "description": "Transfers 15 health from the target to the caster every 3 sec. \u00a0Lasts 30 sec.",
+            "class": "Warlock",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Shadow",
+            "useType": "Healing"
+        },
+        "fr": {
+            "name": "Siphon de vie",
+            "description": "Transf\u00e8re 15 points de vie de la cible vers le lanceur de sorts toutes les 3 sec. Dure 30 sec.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Ombre",
+            "useType": "Soin"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_requiem.jpg"
+},
+{
+    "id": 18220,
+    "translations": {
+        "en": {
+            "name": "Dark Pact",
+            "description": "Drains 150 of your pet's Mana, returning 100% to you.",
+            "class": "Warlock",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Shadow",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Pacte noir",
+            "description": "Draine 150 points de mana \u00e0 votre familier et vous les transf\u00e8re \u00e0 100%.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Ombre",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_darkritual.jpg"
+},
+{
+    "id": 18223,
+    "translations": {
+        "en": {
+            "name": "Curse of Exhaustion",
+            "description": "Reduces the target's movement speed by 10% for 12 sec. \u00a0Only one Curse per Warlock can be active on any one target.",
+            "class": "Warlock",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Shadow",
+            "useType": "Debuff"
+        },
+        "fr": {
+            "name": "Mal\u00e9diction de fatigue",
+            "description": "R\u00e9duit la vitesse de la cible de 10% pendant 12 sec. La cible ne peut \u00eatre victime que d'une mal\u00e9diction par d\u00e9moniste pr\u00e9sent \u00e0 la fois.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Ombre",
+            "useType": "Affaiblissement"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_grimward.jpg"
+},
+{
+    "id": 18288,
+    "translations": {
+        "en": {
+            "name": "Amplify Curse",
+            "description": "Increases the effect of your next Curse of Weakness or Curse of Agony by 50%, or your next Curse of Exhaustion by 20%. \u00a0Lasts 30 sec.",
+            "class": "Warlock",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Shadow",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Mal\u00e9diction amplifi\u00e9e",
+            "description": "Augmente de 50% l'effet de votre prochaine Mal\u00e9diction de faiblesse ou Mal\u00e9diction d'agonie, ou de 20% celui de votre prochaine Mal\u00e9diction de fatigue. \u00a0Dure 30 sec.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Affliction"
+            ],
+            "school": "Ombre",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_shadow_contagion.jpg"
+},
+{
+    "id": 16188,
+    "translations": {
+        "en": {
+            "name": "Nature's Swiftness",
+            "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
+            "class": "Shaman",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Rapidit\u00e9 de la nature",
+            "description": "Activ\u00e9, votre prochain sort de Nature dont le temps d'incantation est inf\u00e9rieur \u00e0 10 secondes devient un sort instantan\u00e9.",
+            "class": "Chaman",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_nature_ravenform.jpg"
+},
+{
+    "id": 16190,
+    "translations": {
+        "en": {
+            "name": "Mana Tide Totem",
+            "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 170 mana every 3 seconds to group members within 20 yards.",
+            "class": "Shaman",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Frost",
+            "useType": "Summon"
+        },
+        "fr": {
+            "name": "Totem de Vague de mana",
+            "description": "Invoque un Totem de Vague de mana aux pieds du lanceur de sorts ; le Totem dispose de 5 points de vie. Agit pendant 12 s. Il rend 170 points de mana toutes les 3 secondes, \u00e0 tous les membres du groupe qui se trouvent dans une zone de 20 m\u00e8tres.",
+            "class": "Chaman",
+            "spec": [
+                "Restoration"
+            ],
+            "school": "Givre",
+            "useType": "Invocation"
+        }
+    },
+    "cooldown": 300,
+    "iconPath": "/assets/spell-icons/spell_frost_summonwaterelemental.jpg"
+},
+{
+    "id": 18788,
+    "translations": {
+        "en": {
+            "name": "Demonic Sacrifice",
+            "description": "When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min. \u00a0The effect is canceled if any Demon is summoned.\n\nImp: Increases your Fire damage by 15%.\n\nVoidwalker: Restores 3% of total Health every 4 sec.\n\nSuccubus/Incubus: Increases your Shadow damage by 15%.\n\nFelhunter: Restores 2% of total Mana every 4 sec.",
+            "class": "Warlock",
+            "spec": [
+                "Demonology"
+            ],
+            "school": "Shadow",
+            "useType": "Utilitaire"
+        },
+        "fr": {
+            "name": "Sacrifice d\u00e9moniaque",
+            "description": "Lorsque cette technique est activ\u00e9e, votre d\u00e9mon invoqu\u00e9 est sacrifi\u00e9 pour vous faire b\u00e9n\u00e9ficier d\u2019un effet qui dure 30 min. L\u2019effet est annul\u00e9 si vous invoquez un nouveau d\u00e9mon.\n\nDiablotin\u00a0: augmente de 15% vos d\u00e9g\u00e2ts de Feu.\n\nMarcheur du Vide\u00a0: rend 3% de vos points de vie totaux toutes les 4\u00a0s.\n\nSuccube/Incube\u00a0: augmente de 15% vos d\u00e9g\u00e2ts d\u2019Ombre.\n\nChasseur corrompu\u00a0: rend 2% de vos points de mana totaux toutes les 4\u00a0s.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Demonology"
+            ],
+            "school": "Ombre",
+            "useType": "Utility"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_psychicscream.jpg"
+},
+{
+    "id": 19028,
+    "translations": {
+        "en": {
+            "name": "Soul Link",
+            "description": "When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Incubus, or Felhunter demon instead. \u00a0In addition, both the demon and master will inflict 3% more damage. \u00a0Lasts as long as the demon is active.",
+            "class": "Warlock",
+            "spec": [
+                "Demonology"
+            ],
+            "school": "Shadow",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Lien spirituel",
+            "description": "Quand l\u2019effet est actif, 30\u00a0% des d\u00e9g\u00e2ts inflig\u00e9s au lanceur ou \u00e0 la lanceuse sont subis \u00e0 sa place par son diablotin, son marcheur du Vide, sa succube, son incube ou son chasseur corrompu. Entre outre, le D\u00e9mon comme son ma\u00eetre ou sa ma\u00eetresse infligent 3\u00a0% de d\u00e9g\u00e2ts suppl\u00e9mentaires. Dure tant que le D\u00e9mon est actif.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Demonology"
+            ],
+            "school": "Ombre",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_gathershadows.jpg"
+},
+{
+    "id": 18708,
+    "translations": {
+        "en": {
+            "name": "Fel Domination",
+            "description": "Your next Imp, Voidwalker, Succubus, Incubus, or Felhunter Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%.",
+            "class": "Warlock",
+            "spec": [
+                "Demonology"
+            ],
+            "school": "Shadow",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Domination corrompue",
+            "description": "Le temps d\u2019incantation de votre prochain sort d\u2019invocation de diablotin, de marcheur du Vide, de succube, d\u2019incube ou de chasseur corrompu est r\u00e9duit de 5.5\u00a0s, et son co\u00fbt en mana est r\u00e9duit de 50%.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Demonology"
+            ],
+            "school": "Ombre",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 900,
+    "iconPath": "/assets/spell-icons/spell_nature_removecurse.jpg"
+},
+{
+    "id": 17877,
+    "translations": {
+        "en": {
+            "name": "Shadowburn",
+            "description": "Instantly blasts the target for 91 to 104 Shadow damage. \u00a0If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains a Soul Shard.",
+            "class": "Warlock",
+            "spec": [
+                "Destruction"
+            ],
+            "school": "Shadow",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Br\u00fblure de l'ombre",
+            "description": "Frappe instantan\u00e9ment la cible et lui inflige 91 \u00e0 104 points de d\u00e9g\u00e2ts d'Ombre. Si la cible meurt dans les 5 sec sous l'effet du sort Br\u00fblure de l'ombre et rapporte de l'exp\u00e9rience ou de l'honneur, le lanceur gagne un Fragment d'\u00e2me.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Destruction"
+            ],
+            "school": "Ombre",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 15,
+    "iconPath": "/assets/spell-icons/spell_shadow_scourgebuild.jpg"
+},
+{
+    "id": 17962,
+    "translations": {
+        "en": {
+            "name": "Conflagrate",
+            "description": "Ignites a target that is already afflicted by Immolate, dealing 249 to 316 Fire damage and consuming the Immolate spell.",
+            "class": "Warlock",
+            "spec": [
+                "Destruction"
+            ],
+            "school": "Fire",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Conflagration",
+            "description": "Enflamme une cible qui est d\u00e9j\u00e0 affect\u00e9e par le sort Immolation, lui inflige 249 \u00e0 316 points de d\u00e9g\u00e2ts de Feu et annule le sort Immolation.",
+            "class": "D\u00e9moniste",
+            "spec": [
+                "Destruction"
+            ],
+            "school": "Feu",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 10,
+    "iconPath": "/assets/spell-icons/spell_fire_fireball.jpg"
+},
+{
+    "id": 12292,
+    "translations": {
+        "en": {
+            "name": "Sweeping Strikes",
+            "description": "Your next 5 melee attacks strike an additional nearby opponent.",
+            "class": "Warrior",
+            "spec": [
+                "Arms"
+            ],
+            "school": "Physical",
+            "useType": "Utility"
+        },
+        "fr": {
+            "name": "Attaques circulaires",
+            "description": "Vos 5 prochaines attaques de m\u00eal\u00e9e touchent un adversaire proche suppl\u00e9mentaire.",
+            "class": "Guerrier",
+            "spec": [
+                "Arms"
+            ],
+            "school": "Physique",
+            "useType": "Utilitaire"
+        }
+    },
+    "cooldown": 30,
+    "iconPath": "/assets/spell-icons/ability_rogue_slicedice.jpg"
+},
+{
+    "id": 12294,
+    "translations": {
+        "en": {
+            "name": "Mortal Strike",
+            "description": "A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
+            "class": "Warrior",
+            "spec": [
+                "Arms"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Frappe mortelle",
+            "description": "Une attaque vicieuse qui inflige les points de d\u00e9g\u00e2ts de l'arme plus 85 et blesse la cible. L'effet des sorts de soins dont elle est la cible est r\u00e9duit de 50% pendant 10 sec.",
+            "class": "Guerrier",
+            "spec": [
+                "Arms"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 6,
+    "iconPath": "/assets/spell-icons/ability_warrior_savageblow.jpg"
+},
+{
+    "id": 12328,
+    "translations": {
+        "en": {
+            "name": "Death Wish",
+            "description": "When activated, increases your physical damage by 20% and makes you immune to Fear effects, but lowers your armor and all resistances by 20%. \u00a0Lasts 30 sec.",
+            "class": "Warrior",
+            "spec": [
+                "Fury"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Souhait mortel",
+            "description": "Lorsque cette technique est activ\u00e9e, elle augmente les d\u00e9g\u00e2ts physiques que vous infligez de 20% et vous rend insensible aux effets de Peur. En contrepartie, votre armure et toutes vos r\u00e9sistances sont r\u00e9duites de 20%. Dure 30 sec.",
+            "class": "Guerrier",
+            "spec": [
+                "Fury"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 180,
+    "iconPath": "/assets/spell-icons/spell_shadow_deathpact.jpg"
+},
+{
+    "id": 23881,
+    "translations": {
+        "en": {
+            "name": "Bloodthirst",
+            "description": "Instantly attack the target causing damage equal to 45% of your attack power. \u00a0In addition, the next 5 successful melee attacks will restore 10 health. \u00a0This effect lasts 8 sec.",
+            "class": "Warrior",
+            "spec": [
+                "Fury"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Sanguinaire",
+            "description": "Attaque instantan\u00e9ment la cible, infligeant des d\u00e9g\u00e2ts \u00e9gaux \u00e0 45% de votre puissance d'attaque. \u00a0De plus, les 5 prochaines attaques de m\u00eal\u00e9e r\u00e9ussies rendent 10 points de vie. \u00a0Cet effet dure 8 sec.",
+            "class": "Guerrier",
+            "spec": [
+                "Fury"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 6,
+    "iconPath": "/assets/spell-icons/spell_nature_bloodlust.jpg"
+},
+{
+    "id": 12323,
+    "translations": {
+        "en": {
+            "name": "Piercing Howl",
+            "description": "Causes all enemies near the warrior to be dazed, reducing movement speed by 50% for 6 sec.",
+            "class": "Warrior",
+            "spec": [
+                "Fury"
+            ],
+            "school": "Physical",
+            "useType": "CC"
+        },
+        "fr": {
+            "name": "Hurlement per\u00e7ant",
+            "description": "Tous les ennemis \u00e0 proximit\u00e9 du guerrier sont h\u00e9b\u00e9t\u00e9s, et leurs vitesse de d\u00e9placement est r\u00e9duite de 50% pendant 6 sec.",
+            "class": "Guerrier",
+            "spec": [
+                "Fury"
+            ],
+            "school": "Physique",
+            "useType": "Contrôle"
+        }
+    },
+    "cooldown": 0,
+    "iconPath": "/assets/spell-icons/spell_shadow_deathscream.jpg"
+},
+{
+    "id": 23922,
+    "translations": {
+        "en": {
+            "name": "Shield Slam",
+            "description": "Slam the target with your shield, causing 225 to 235 damage, modified by [S03 - Tuning and Overrides Passive - Warrior: twice]your shield block value, and has a 50% chance of dispelling 1 magic effect on the target. \u00a0Also causes a high amount of threat. [S03 - Tuning and Overrides Passive - Warrior: Hitting a target with Shield Slam also grants you 4 Attack Power for each point of your defense skill beyond (60 * 5). Lasts 15 sec]",
+            "class": "Warrior",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Physical",
+            "useType": "Damaging"
+        },
+        "fr": {
+            "name": "Heurt de bouclier",
+            "description": "Donne un coup de bouclier \u00e0 la cible, infligeant 225 \u00e0 235\u00a0points de d\u00e9g\u00e2ts modifi\u00e9s par [S03 \u2013 Harmonisation et remplacement de passif \u2013 Guerrier ou guerri\u00e8re: le double de]votre valeur de blocage, et avec 50\u00a0% de chances de dissiper 1 effet de magie sur la cible. G\u00e9n\u00e8re aussi un niveau \u00e9lev\u00e9 de menace. [S03 \u2013 Harmonisation et remplacement de passif \u2013 Guerrier ou guerri\u00e8re: Toucher une cible avec Heurt de bouclier vous conf\u00e8re \u00e9galement 4 \u00e0 la puissance d\u2019attaque pour chaque point de d\u00e9fense au-del\u00e0 de (60 * 5). Dure 15 sec]",
+            "class": "Guerrier",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Physique",
+            "useType": "Dégâts"
+        }
+    },
+    "cooldown": 6,
+    "iconPath": "/assets/spell-icons/inv_shield_05.jpg"
+},
+{
+    "id": 12975,
+    "translations": {
+        "en": {
+            "name": "Last Stand",
+            "description": "When activated, this ability temporarily grants you 30% of your maximum hit points for 20 seconds. \u00a0After the effect expires, the hit points are lost.",
+            "class": "Warrior",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Physical",
+            "useType": "Buff"
+        },
+        "fr": {
+            "name": "Dernier rempart",
+            "description": "Activ\u00e9e, cette technique vous accorde pendant 20 secondes 30% de votre maximum de points de vie en plus. Lorsque l'effet expire, les points de vie sont perdus.",
+            "class": "Guerrier",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Physique",
+            "useType": "Amélioration"
+        }
+    },
+    "cooldown": 600,
+    "iconPath": "/assets/spell-icons/spell_holy_ashestoashes.jpg"
+},
+{
+    "id": 12809,
+    "translations": {
+        "en": {
+            "name": "Concussion Blow",
+            "description": "Stuns the opponent for 5 sec.",
+            "class": "Warrior",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Physical",
+            "useType": "CC"
+        },
+        "fr": {
+            "name": "Bourrasque",
+            "description": "Etourdit l'adversaire pendant 5 sec.",
+            "class": "Guerrier",
+            "spec": [
+                "Protection"
+            ],
+            "school": "Physique",
+            "useType": "Contrôle"
+        }
+    },
+    "cooldown": 45,
+    "iconPath": "/assets/spell-icons/ability_thunderbolt.jpg"
+}
   ],
   "dailySpells": [
     {
       "id": "b345",
       "date": "2026-01-28",
       "spellId": "25916"
+    },
+    {
+      "id": "c4a9",
+      "date": "2026-01-30",
+      "spellId": "25302"
     }
   ]
 }
