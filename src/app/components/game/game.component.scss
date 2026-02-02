@@ -1,6 +1,7 @@
 .game-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: 15%;
+  margin-right: 15%;
   padding: 40px;
   font-family: Arial, sans-serif;
 }
@@ -297,6 +298,10 @@
 
 // Responsive design for mobile
 @media (max-width: 700px) {
+  .game-container{
+    margin:0 auto;
+  }
+  
   .guesses-table {
     font-size: 0.85em;
     /* Mobile-only: make the table background transparent so individual guess cards
