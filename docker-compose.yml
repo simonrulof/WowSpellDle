@@ -1,0 +1,34 @@
+services:
+  # Angular frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    environment:
+      - API_URL=http://backend:3000
+    networks:
+      - wowspelldle-network
+
+  # JSON Server backend
+  backend:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./data:/app/data
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c "npm install json-server &&
+             npx json-server --watch /app/data/db.json --host 0.0.0.0 --port 3000"
+    networks:
+      - wowspelldle-network
+
+networks:
+  wowspelldle-network:
+    driver: bridge

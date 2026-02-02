@@ -1,0 +1,27 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Angular
+dist
+.angular
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+**/*.spec.ts

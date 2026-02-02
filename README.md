@@ -80,6 +80,23 @@ npm install
 
 ### Running the Application
 
+#### Option 1: Using Docker (Recommended)
+
+```bash
+# Build and start all services with docker-compose
+docker-compose up --build
+
+# The app will be available at http://localhost:4200/
+# The API will be available at http://localhost:3000/
+```
+
+To stop the containers:
+```bash
+docker-compose down
+```
+
+#### Option 2: Local Development
+
 ```bash
 # Terminal 1: Start the mock API server
 npm run db
@@ -97,6 +114,18 @@ npm run build
 ```
 
 Output will be in the `dist/` directory.
+
+### Docker Deployment
+
+Build the production Docker image:
+```bash
+docker build -t wowspelldle:latest .
+```
+
+Run the container:
+```bash
+docker run -p 80:80 wowspelldle:latest
+```
 
 ## Development
 
