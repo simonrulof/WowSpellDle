@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, Injector } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, switchMap } from 'rxjs';
 import { catchError, map, shareReplay } from 'rxjs/operators';
@@ -14,7 +14,8 @@ interface DailySpellEntry {
 })
 export class SpellService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000';
+  private injector = inject(Injector);
+  private apiUrl = this.injector.get('API_URL' as any);
 
   // Cache for today's spell - shared across all components
   private todaysSpellCache$?: Observable<Spell | undefined>;
