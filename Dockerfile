@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm i
 
 # Copy source code
 COPY . .
@@ -22,7 +22,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copy built application from builder stage
-COPY --from=builder /app/dist/wow-spell-dle/browser /usr/share/nginx/html
+COPY --from=builder /app/dist/WowSpellDle/browser /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
