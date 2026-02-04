@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'http://warcraftdle.com/api'
+  apiUrl: 'http://localhost:3000'
 };
