@@ -5,7 +5,8 @@ import { SpellService } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
 import { UITranslationService } from '../../services/ui-translation.service';
 import { Spell, getSpellText } from '../../models/spell.model';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-spell-search',
@@ -59,7 +60,9 @@ export class SpellSearchComponent {
 
   constructor() {
     // Load all spells on init
-    this.spellService.getAllSpells().subscribe((spells) => {
+    this.spellService.getAllSpells().pipe(
+        takeUntilDestroyed()
+      ).subscribe((spells) => {
       this.allSpells.set(spells);
     });
 
@@ -67,6 +70,7 @@ export class SpellSearchComponent {
     this.searchInput.valueChanges
       .pipe(
         distinctUntilChanged(),
+        takeUntilDestroyed()
       )
       .subscribe((value) => {
         this.searchQuery.set(value || '');
