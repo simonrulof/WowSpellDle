@@ -37,7 +37,7 @@ WowSpellDle/
 │   │   │   ├── spell-search/            # Autocomplete spell selector
 │   │   │   └── spell-service-example/   # Service usage example
 │   │   ├── services/
-│   │   │   ├── spell.service.ts         # Spell API calls and game logic
+│   │   │   ├── spell.service.ts         # API calls to .NET backend
 │   │   │   ├── localization.service.ts  # Language management
 │   │   │   ├── ui-translation.service.ts # UI text translations
 │   │   │   └── icon.service.ts          # SVG icon path mapping
@@ -46,6 +46,8 @@ WowSpellDle/
 │   │   ├── app.ts                       # Root component
 │   │   ├── app.scss                     # Root styles
 │   │   └── app.routes.ts                # Routing configuration
+│   ├── environment.ts                   # Development environment config
+│   ├── environment.prod.ts              # Production environment config
 │   ├── assets/
 │   │   └── translations.json            # EN/FR translations
 │   ├── styles.scss                      # Global styles
@@ -55,7 +57,7 @@ WowSpellDle/
 │       ├── background.png               # Game background
 │       └── spell-icons/                 # SVG spell icons
 ├── data/
-│   └── db.json                          # Mock database (json-server)
+│   └── db.json                          # Spell database (used by .NET API)
 ├── angular.json                         # Angular configuration
 ├── package.json                         # Dependencies
 └── tsconfig.json                        # TypeScript configuration
@@ -80,14 +82,18 @@ npm install
 
 ### Running the Application
 
+#### Prerequisites
+- **Angular Frontend**: Node.js 20+ and npm
+- **.NET Backend API**: .NET 8+ SDK (running on port 5000)
+
 #### Option 1: Using Docker (Recommended)
 
 ```bash
-# Build and start all services with docker-compose
+# Build and start the frontend
 docker-compose up --build
 
-# The app will be available at http://localhost:4200/
-# The API will be available at http://localhost:3000/
+# The frontend will be available at http://localhost:80/
+# Make sure your .NET API is running on http://localhost:5000/
 ```
 
 To stop the containers:
@@ -98,10 +104,8 @@ docker-compose down
 #### Option 2: Local Development
 
 ```bash
-# Terminal 1: Start the mock API server
-npm run db
-
-# Terminal 2: Start the Angular development server
+# Make sure your .NET API is running on port 5000
+# Then start the Angular development server
 npm start
 ```
 
@@ -204,15 +208,38 @@ App (Root)
 ### Data Flow
 
 ```
-SpellService → Fetch daily spell and spell list
+.NET API (localhost:5000) → Provides spells and comparison
               ↓
-GameComponent → Display game state
+SpellService → Fetch spells and send guesses to API
+              ↓
+GameComponent → Display game state and feedback
               ↓
 SpellSearchComponent → Filter spells, handle selection
                      ↓
-GameComponent.makeGuess() → Calculate feedback
+GameComponent.makeGuess() → Send to API, receive feedback
                           ↓
-Update guesses array
+Update guesses array with API response
+```
+
+### API Integration
+
+The application communicates with a .NET backend API on port 5000:
+
+**Endpoints:**
+- `GET /Spells/all` - Fetch all available spells
+- `GET /Spells/guess/{spellId}` - Compare spell with today's daily spell
+- `GET /Spells/guess/{spellId}/{date}` - Compare spell with a specific date
+
+**Response format:**
+```json
+{
+  "spell": 0,      // 0 = incorrect, 1 = correct
+  "class": 0,      // 0 = incorrect, 1 = correct  
+  "spec": 1,       // 0 = incorrect, 1 = correct, 2 = partial
+  "school": 0,     // 0 = incorrect, 1 = correct
+  "useType": 0,    // 0 = incorrect, 1 = correct
+  "cooldown": 4    // 1 = correct, 3 = more, 4 = less
+}
 ```
 
 ## Technologies
@@ -224,7 +251,7 @@ Update guesses array
 | SCSS | Latest | Styling |
 | RxJS | 7.8.0 | Reactive programming |
 | Angular Forms | 21.1.0 | Reactive forms |
-| json-server | 0.17.4 | Mock API |
+| .NET 8+ | Latest | Backend API |
 
 ## Components
 
@@ -285,11 +312,14 @@ filteredSpells = computed();  // Filtered spell list
 **Path:** `src/app/services/spell.service.ts`
 
 **Methods:**
-- `getAllSpells()` - Fetch all available spells
-- `getTodaysSpell()` - Get today's daily spell
-- `calculateFeedback(guess, target)` - Compare two spells
+- `getAllSpells()` - Fetch all spells from .NET API
+- `getSpellById(id)` - Get specific spell by ID
+- `compareSpell(spellId, date?)` - Send guess to API and receive comparison feedback
 
-**Mock Data:** 8 WoW spells (Fireball, Heal, Charge, Shadow Bolt, Shield, Frost Bolt, Rejuvenation, Aimed Shot)
+**API Integration:**
+- Base URL: `http://localhost:5000`
+- All spell data and game logic handled by .NET backend
+- Returns structured feedback for each guess
 
 ### LocalizationService
 **Path:** `src/app/services/localization.service.ts`
@@ -363,13 +393,26 @@ filteredSpells = computed();  // Filtered spell list
 | ↩️ Enter | Select highlighted spell |
 | Esc | Close dropdown |
 
-## API Endpoints (json-server)
+## API Endpoints (.NET Backend)
+
+The application requires a .NET backend API running on `http://localhost:5000` with the following endpoints:
 
 ```
-GET  /spells           - All spells
-GET  /spells/:id       - Specific spell
-GET  /dailySpells      - All daily spell records
-GET  /dailySpells?date={date} - Today's daily spell
+GET  /Spells/all                  - Fetch all available spells
+GET  /Spells/guess/{spellId}      - Compare spell with today's daily spell
+GET  /Spells/guess/{spellId}/{date} - Compare spell with a specific date
+```
+
+**Response Format:**
+```typescript
+{
+  spell: number;     // 0 = incorrect, 1 = correct
+  class: number;     // 0 = incorrect, 1 = correct
+  spec: number;      // 0 = incorrect, 1 = correct, 2 = partial
+  school: number;    // 0 = incorrect, 1 = correct
+  useType: number;   // 0 = incorrect, 1 = correct
+  cooldown: number;  // 1 = correct, 3 = more, 4 = less
+}
 ```
 
 ## Performance Optimizations
@@ -392,7 +435,14 @@ GET  /dailySpells?date={date} - Today's daily spell
 - Verify `IconService` has correct paths
 
 ### Spells not appearing
-- Ensure `json-server` is running on port 3000
+- Ensure .NET API is running on port 5000
+- Check browser console for CORS or network errors
+- Verify environment.ts has correct API URL
+
+### API Connection Issues
+- Make sure your .NET backend is running
+- Check that the API is accessible at `http://localhost:5000`
+- Verify CORS is properly configured on the .NET API
 - Check `SpellService` API endpoints in browser DevTools
 
 ### Language not changing
