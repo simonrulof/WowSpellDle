@@ -1,7 +1,7 @@
 import { Component, inject, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { SpellService } from '../../services/spell.service';
+import { SpellService, GuessResponse } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
 import { UITranslationService } from '../../services/ui-translation.service';
 import { AttemptsComponent } from '../attempts/attempts.component';
@@ -18,7 +18,7 @@ export interface GuessResult {
 
 export interface SpellFeedback {
   class: boolean;
-  spec: 'correct' | 'partial' | 'incorrect'; // Changed to support 3 states
+  spec: 'correct' | 'partial' | 'incorrect';
   school: boolean;
   useType: boolean;
   cooldown: 'correct' | 'longer' | 'shorter';
@@ -37,22 +37,18 @@ export class GameComponent {
   localizationService = inject(LocalizationService);
   uiTranslationService = inject(UITranslationService);
 
-  todaysSpell$: Observable<Spell | undefined> = this.spellService.getTodaysDailySpellWithDetails();
-  
-  // Convert Observable to Signal for use in computed
-  private todaysSpellSignal = toSignal(this.todaysSpell$);
-
   // State management - use signal for guesses
   private guessesList = signal<GuessResult[]>([]);
   guesses = this.guessesList;
 
   attemptCount = computed(() => this.guessesList().length);
 
+  // Check if the user has won by looking at the last guess feedback
   hasWon = computed(() => {
-    const todaysSpell = this.todaysSpellSignal();
-    if (!todaysSpell) return false;
-    // Check if any guess matches the actual spell ID
-    return this.guessesList().some((guess: GuessResult) => guess.spell.id === todaysSpell.id);
+    const guesses = this.guessesList();
+    if (guesses.length === 0) return false;
+    const lastGuess = guesses[guesses.length - 1];
+    return this.isGuessCorrect(lastGuess.feedback);
   });
 
   // Extract guessed spells for the search component to exclude
@@ -62,10 +58,16 @@ export class GameComponent {
    * Handle a spell guess
    */
   makeGuess(guessedSpell: Spell): void {
-    this.todaysSpell$.subscribe((targetSpell) => {
-      if (!targetSpell || !guessedSpell) return;
+    if (!guessedSpell) return;
 
-      const feedback = this.compareSpells(guessedSpell, targetSpell);
+    // Call the API to compare the spell
+    this.spellService.compareSpell(guessedSpell.id).subscribe((response) => {
+      if (!response) {
+        console.error('Failed to get comparison response from API');
+        return;
+      }
+
+      const feedback = this.convertApiResponseToFeedback(response);
       const currentGuesses = this.guessesList();
       const newGuess: GuessResult = {
         spell: guessedSpell,
@@ -78,51 +80,43 @@ export class GameComponent {
   }
 
   /**
-   * Compare two spells and return feedback
+   * Convert API response to SpellFeedback format
+   * API values: 0 = incorrect, 1 = correct, 2 = partial, 3 = more, 4 = less
    */
-  private compareSpells(guessedSpell: Spell, targetSpell: Spell): SpellFeedback {
-    const language = this.localizationService.getLanguage();
-    const guessedText = getSpellText(guessedSpell, language);
-    const targetText = getSpellText(targetSpell, language);
-
+  private convertApiResponseToFeedback(response: GuessResponse): SpellFeedback {
     return {
-      class: guessedText.class === targetText.class,
-      spec: this.compareSpecs(guessedText.spec, targetText.spec),
-      school: guessedText.school === targetText.school,
-      useType: guessedText.useType === targetText.useType,
-      cooldown:
-        guessedSpell.cooldown === targetSpell.cooldown
-          ? 'correct'
-          : guessedSpell.cooldown > targetSpell.cooldown
-            ? 'shorter'
-            : 'longer',
+      class: response.class === 1,
+      spec: this.convertSpecValue(response.spec),
+      school: response.school === 1,
+      useType: response.useType === 1,
+      cooldown: this.convertCooldownValue(response.cooldown),
     };
   }
 
   /**
-   * Compare two spec arrays
-   * Returns 'correct' if arrays are identical, 'partial' if there's any overlap, 'incorrect' otherwise
+   * Convert spec value from API
+   * 0 = incorrect, 1 = correct, 2 = partial
    */
-  private compareSpecs(guessedSpecs: string[], targetSpecs: string[]): 'correct' | 'partial' | 'incorrect' {
-    // Safety check: ensure both are arrays
-    const guessedArray = Array.isArray(guessedSpecs) ? guessedSpecs : [guessedSpecs];
-    const targetArray = Array.isArray(targetSpecs) ? targetSpecs : [targetSpecs];
-    
-    // Check if arrays are identical (same length and same items)
-    if (guessedArray.length === targetArray.length && 
-        guessedArray.every(spec => targetArray.includes(spec))) {
-      return 'correct';
-    }
-    
-    // Check for any overlap
-    const hasOverlap = guessedArray.some(spec => targetArray.includes(spec));
-    return hasOverlap ? 'partial' : 'incorrect';
+  private convertSpecValue(value: number): 'correct' | 'partial' | 'incorrect' {
+    if (value === 1) return 'correct';
+    if (value === 2) return 'partial';
+    return 'incorrect';
+  }
+
+  /**
+   * Convert cooldown value from API
+   * 1 = correct, 3 = more (guessed spell has longer cooldown), 4 = less (guessed spell has shorter cooldown)
+   */
+  private convertCooldownValue(value: number): 'correct' | 'longer' | 'shorter' {
+    if (value === 1) return 'correct';
+    if (value === 3) return 'longer'; // Guessed spell has MORE cooldown -> arrow up
+    return 'shorter'; // Guessed spell has LESS cooldown -> arrow down
   }
 
   /**
    * Check if a guess is completely correct
    */
-  private isGuessCorrect(feedback: SpellFeedback): boolean {
+  isGuessCorrect(feedback: SpellFeedback): boolean {
     return (
       feedback.class &&
       feedback.spec === 'correct' &&
