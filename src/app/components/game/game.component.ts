@@ -17,6 +17,7 @@ export interface GuessResult {
 }
 
 export interface SpellFeedback {
+  spell: boolean;
   class: boolean;
   spec: 'correct' | 'partial' | 'incorrect';
   school: boolean;
@@ -85,6 +86,7 @@ export class GameComponent {
    */
   private convertApiResponseToFeedback(response: GuessResponse): SpellFeedback {
     return {
+      spell: response.spell === 1,
       class: response.class === 1,
       spec: this.convertSpecValue(response.spec),
       school: response.school === 1,
@@ -118,6 +120,7 @@ export class GameComponent {
    */
   isGuessCorrect(feedback: SpellFeedback): boolean {
     return (
+      feedback.spell &&
       feedback.class &&
       feedback.spec === 'correct' &&
       feedback.school &&
