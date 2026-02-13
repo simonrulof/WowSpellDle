@@ -14,6 +14,11 @@ export interface GuessResponse {
   cooldown: number;
 }
 
+export interface HintResponse {
+  hintFr: string;
+  hintEn: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -59,6 +64,23 @@ export class SpellService {
     return this.http.get<GuessResponse>(endpoint).pipe(
       catchError((error) => {
         console.error(`Error comparing spell with id ${spellId}:`, error);
+        return of(undefined);
+      }),
+    );
+  }
+
+  /**
+   * Get a hint for the daily spell (first letter)
+   * @param date - Optional date in format YYYY-MM-DD (for playing previous days)
+   */
+  getHint(date?: string): Observable<HintResponse | undefined> {
+    const endpoint = date
+      ? `${this.apiUrl}/Spells/getFirstHint/${date}`
+      : `${this.apiUrl}/Spells/getFirstHint`;
+      
+    return this.http.get<HintResponse>(endpoint).pipe(
+      catchError((error) => {
+        console.error('Error fetching hint:', error);
         return of(undefined);
       }),
     );

@@ -1,0 +1,31 @@
+<div class="attempts-container">
+  <div class="attempts-info">
+    <strong>{{ uiTranslationService.getText('game.attempts') }}</strong>
+    <span class="attempts-count">{{ attemptCount() }}</span>
+  </div>
+
+  <div 
+    class="hint-box" 
+    [class.locked]="!canUnlockHint()"
+    [class.clickable]="canUnlockHint() && !isHintRevealed()"
+    [class.revealed]="isHintRevealed()"
+    (click)="onHintClick()">
+    
+    @if (!isHintRevealed()) {
+      <div class="hint-content">
+        <span class="hint-icon">💡</span>
+        <span class="hint-label">{{ uiTranslationService.getText('game.hint') }}</span>
+        @if (!canUnlockHint()) {
+          <span class="hint-remaining">{{ remainingGuesses() }} {{ uiTranslationService.getText('game.hint.remaining') }}</span>
+        } @else {
+          <span class="hint-unlock">{{ uiTranslationService.getText('game.hint.unlock') }}</span>
+        }
+      </div>
+    } @else {
+      <div class="hint-content revealed">
+        <span class="hint-description">{{ uiTranslationService.getText('game.hint.firstLetter') }}</span>
+        <span class="hint-letter">{{ hint() }}</span>
+      </div>
+    }
+  </div>
+</div>
