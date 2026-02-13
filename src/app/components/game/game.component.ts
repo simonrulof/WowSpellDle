@@ -1,9 +1,10 @@
-import { Component, inject, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, signal, computed, OnInit, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpellService, GuessResponse } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
 import { UITranslationService } from '../../services/ui-translation.service';
+import { CookieService, GameState } from '../../services/cookie.service';
 import { AttemptsComponent } from '../attempts/attempts.component';
 import { SpellSearchComponent } from '../spell-search/spell-search.component';
 import { Spell, getSpellText } from '../../models/spell.model';
@@ -33,8 +34,9 @@ export interface SpellFeedback {
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
 })
-export class GameComponent {
+export class GameComponent implements OnInit {
   private spellService = inject(SpellService);
+  private cookieService = inject(CookieService);
   localizationService = inject(LocalizationService);
   uiTranslationService = inject(UITranslationService);
 
@@ -43,6 +45,9 @@ export class GameComponent {
   guesses = this.guessesList;
 
   attemptCount = computed(() => this.guessesList().length);
+
+  // Track if hint was used
+  private hintUsedSignal = signal<boolean>(false);
 
   // Check if the user has won by looking at the last guess feedback
   hasWon = computed(() => {
@@ -54,6 +59,90 @@ export class GameComponent {
 
   // Extract guessed spells for the search component to exclude
   guessedSpells = computed(() => this.guessesList().map((guess) => guess.spell));
+
+  constructor() {
+    // Effect to save game state when guesses or hasWon changes
+    effect(() => {
+      const guesses = this.guessesList();
+      const won = this.hasWon();
+      const hintUsed = this.hintUsedSignal();
+
+      // Only save if cookies are accepted
+      if (this.cookieService.cookieConsentGiven()) {
+        this.saveGameState(guesses, won, hintUsed);
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.loadGameState();
+  }
+
+  /**
+   * Get today's date in YYYY-MM-DD format
+   */
+  private getTodayDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  /**
+   * Load game state from cookies if available
+   */
+  private loadGameState(): void {
+    const savedState = this.cookieService.loadTodaysGameState();
+    if (!savedState) return;
+
+    // Restore guesses by fetching spell details and recreating GuessResult objects
+    if (savedState.guesses && savedState.guesses.length > 0) {
+      savedState.guesses.forEach((spellId) => {
+        this.spellService.getSpellById(spellId).subscribe((spell) => {
+          if (spell) {
+            this.spellService.compareSpell(spell.id).subscribe((response) => {
+              if (response) {
+                const feedback = this.convertApiResponseToFeedback(response);
+                const currentGuesses = this.guessesList();
+                const newGuess: GuessResult = {
+                  spell,
+                  feedback,
+                  attemptNumber: currentGuesses.length + 1,
+                };
+                this.guessesList.set([...currentGuesses, newGuess]);
+              }
+            });
+          }
+        });
+      });
+    }
+
+    // Restore hint state
+    if (savedState.hintUsed) {
+      this.hintUsedSignal.set(true);
+    }
+  }
+
+  /**
+   * Save game state to cookies
+   */
+  private saveGameState(guesses: GuessResult[], won: boolean, hintUsed: boolean): void {
+    const gameState: GameState = {
+      date: this.getTodayDate(),
+      guesses: guesses.map((guess) => guess.spell.id),
+      won,
+      hintUsed,
+    };
+    this.cookieService.saveGameState(gameState);
+  }
+
+  /**
+   * Mark hint as used (called from AttemptsComponent)
+   */
+  markHintUsed(): void {
+    this.hintUsedSignal.set(true);
+  }
 
   /**
    * Handle a spell guess

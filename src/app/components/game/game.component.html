@@ -9,7 +9,7 @@
   <div class="game-content">
     <!-- Game Status -->
     <div class="game-status">
-      <app-attempts [attemptCount]="attemptCount()"></app-attempts>
+      <app-attempts [attemptCount]="attemptCount()" (hintUsed)="markHintUsed()"></app-attempts>
       @if (hasWon()) {
         <div class="win-message">
           <h2>{{ uiTranslationService.getText('game.youWon') }}</h2>

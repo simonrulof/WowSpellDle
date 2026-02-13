@@ -42,5 +42,9 @@
   "game.feedback.tableHeader.spec": { "en": "Specialization", "fr": "Spécialisation" },
   "game.feedback.tableHeader.school": { "en": "School", "fr": "École" },
   "game.feedback.tableHeader.type": { "en": "Type", "fr": "Type" },
-  "game.feedback.tableHeader.cooldown": { "en": "Cooldown", "fr": "Temps de Recharge" }
+  "game.feedback.tableHeader.cooldown": { "en": "Cooldown", "fr": "Temps de Recharge" },
+  "cookie.title": { "en": "Cookie Consent", "fr": "Consentement aux Cookies" },
+  "cookie.message": { "en": "We use cookies to save your game progress and stats. This helps you continue your game across sessions. Do you accept cookies?", "fr": "Nous utilisons des cookies pour sauvegarder votre progression et vos statistiques. Cela vous permet de continuer votre partie entre les sessions. Acceptez-vous les cookies ?" },
+  "cookie.accept": { "en": "Accept", "fr": "Accepter" },
+  "cookie.decline": { "en": "Decline", "fr": "Refuser" }
 }
