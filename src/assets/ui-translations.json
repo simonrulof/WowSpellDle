@@ -1,6 +1,7 @@
 {
-  "game.title": { "en": "WowSpellDle", "fr": "WowSpellDle" },
+  "game.title": { "en": "WarcraftDle", "fr": "WarcraftDle" },
   "game.languageToggle": { "en": "EN", "fr": "FR" },
+  "game.instruction": { "en": "Guess the right WoW Classic spell!", "fr": "Devinez le bon sort de WoW Classic !" },
   "game.attempts": { "en": "Attempts:", "fr": "Tentatives :" },
   "game.hint": { "en": "Hint", "fr": "Indice" },
   "game.hint.remaining": { "en": "more guesses to unlock", "fr": "tentatives restantes pour débloquer" },

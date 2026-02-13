@@ -1,4 +1,4 @@
-# WowSpellDle 🎮✨
+# WarcraftDle 🎮✨
 
 A **World of Warcraft**-themed spelling guessing game built with **Angular 21** and **TypeScript**. Guess the daily spell based on feedback about class, specialization, school, type, and cooldown.
 
