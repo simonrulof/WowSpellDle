@@ -142,3 +142,10 @@
   }
 }
 
+
+@media (max-width: 700px) {
+  .attempts-container{
+    display: flex;
+    flex-direction: column;
+  }
+}
