@@ -7,6 +7,11 @@
   </div>
 
   <div class="game-content">
+    <!-- Game Instruction -->
+    <div class="game-instruction">
+      <p>{{ uiTranslationService.getText('game.instruction') }}</p>
+    </div>
+
     <!-- Game Status -->
     <div class="game-status">
       <app-attempts [attemptCount]="attemptCount()" (hintUsed)="markHintUsed()"></app-attempts>
