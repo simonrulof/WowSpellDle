@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, signal, computed, output } from '@angular/core';
 import { UITranslationService } from '../../services/ui-translation.service';
 import { LocalizationService } from '../../services/localization.service';
 import { SpellService, HintResponse } from '../../services/spell.service';
@@ -20,6 +20,9 @@ export class AttemptsComponent {
 
   // Input: number of attempts
   attemptCount = input<number>(0);
+
+  // Output: emit when hint is used
+  hintUsed = output<void>();
 
   // Hint state - store the full hint response
   private hintResponse = signal<HintResponse | undefined>(undefined);
@@ -47,6 +50,7 @@ export class AttemptsComponent {
         if (hintResponse) {
           this.hintResponse.set(hintResponse);
           this.isHintRevealed.set(true);
+          this.hintUsed.emit(); // Notify parent component
         }
       });
     }

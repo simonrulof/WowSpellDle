@@ -1,0 +1,15 @@
+<div class="cookie-consent-overlay" *ngIf="cookieConsentGiven() === null">
+  <div class="cookie-consent-banner">
+    <div class="cookie-icon">🍪</div>
+    <h3>{{ uiTranslation.getText('cookie.title') }}</h3>
+    <p>{{ uiTranslation.getText('cookie.message') }}</p>
+    <div class="cookie-buttons">
+      <button class="btn-accept" (click)="acceptCookies()">
+        {{ uiTranslation.getText('cookie.accept') }}
+      </button>
+      <button class="btn-decline" (click)="declineCookies()">
+        {{ uiTranslation.getText('cookie.decline') }}
+      </button>
+    </div>
+  </div>
+</div>
