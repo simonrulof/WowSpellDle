@@ -28,7 +28,6 @@ export interface SpellFeedback {
 
 @Component({
   selector: 'app-game',
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, AttemptsComponent, SpellSearchComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './game.component.html',

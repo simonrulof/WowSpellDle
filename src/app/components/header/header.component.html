@@ -1,0 +1,10 @@
+<header class="app-header">
+  <h1>{{ uiTranslationService.getText('game.title') }}</h1>
+  <button 
+    (click)="localizationService.toggleLanguage()" 
+    class="language-toggle"
+    type="button"
+    [attr.aria-label]="'Toggle language'">
+    {{ uiTranslationService.getLanguageDisplayName(localizationService.getLanguage()) }}
+  </button>
+</header>

@@ -10,6 +10,17 @@
   color: #ffffff;
 }
 
+app-header {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 0;
+}
+
+app-game {
+  display: block;
+}
+
 ::ng-deep {
   h1,
   h2,
