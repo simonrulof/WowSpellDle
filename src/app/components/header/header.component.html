@@ -1,5 +1,27 @@
 <header class="app-header">
-  <h1>{{ uiTranslationService.getText('game.title') }}</h1>
+  <div class="header-left">
+    <h1>
+      <a routerLink="/" class="title-link">
+        {{ uiTranslationService.getText('game.title') }}
+      </a>
+    </h1>
+    <nav class="header-nav">
+      <a 
+        routerLink="/" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        class="nav-link">
+        {{ uiTranslationService.getText('nav.today') }}
+      </a>
+      <a 
+        routerLink="/archive" 
+        routerLinkActive="active"
+        class="nav-link">
+        {{ uiTranslationService.getText('nav.archive') }}
+      </a>
+    </nav>
+  </div>
+  
   <button 
     (click)="localizationService.toggleLanguage()" 
     class="language-toggle"

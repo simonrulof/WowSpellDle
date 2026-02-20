@@ -85,4 +85,17 @@ export class SpellService {
       }),
     );
   }
+
+  /**
+   * Get all dates that have spells available
+   * @returns Array of date strings in format YYYY-MM-DD
+   */
+  getExistingDates(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/Spells/getExistingDates`).pipe(
+      catchError((error) => {
+        console.error('Error fetching existing dates:', error);
+        return of([]);
+      }),
+    );
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, inject, ChangeDetectionStrategy, signal, computed, OnInit, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpellService, GuessResponse } from '../../services/spell.service';
 import { LocalizationService } from '../../services/localization.service';
@@ -8,8 +9,9 @@ import { CookieService, GameState } from '../../services/cookie.service';
 import { AttemptsComponent } from '../attempts/attempts.component';
 import { SpellSearchComponent } from '../spell-search/spell-search.component';
 import { Spell, getSpellText } from '../../models/spell.model';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin, of } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { map, switchMap } from 'rxjs/operators';
 
 export interface GuessResult {
   spell: Spell;
@@ -36,8 +38,12 @@ export interface SpellFeedback {
 export class GameComponent implements OnInit {
   private spellService = inject(SpellService);
   private cookieService = inject(CookieService);
+  private route = inject(ActivatedRoute);
   localizationService = inject(LocalizationService);
   uiTranslationService = inject(UITranslationService);
+
+  // Track the current game date (from route or today)
+  private gameDate = signal<string>(this.getTodayDate());
 
   // State management - use signal for guesses
   private guessesList = signal<GuessResult[]>([]);
@@ -74,7 +80,14 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadGameState();
+    // Get date from route parameter if it exists
+    this.route.paramMap.subscribe(params => {
+      const dateParam = params.get('date');
+      if (dateParam) {
+        this.gameDate.set(dateParam);
+      }
+      this.loadGameState();
+    });
   }
 
   /**
@@ -89,31 +102,56 @@ export class GameComponent implements OnInit {
   }
 
   /**
+   * Get current game date
+   */
+  getCurrentDate(): string {
+    return this.gameDate();
+  }
+
+  /**
+   * Check if playing an archived game
+   */
+  isArchiveGame(): boolean {
+    return this.gameDate() !== this.getTodayDate();
+  }
+
+  /**
    * Load game state from cookies if available
    */
   private loadGameState(): void {
-    const savedState = this.cookieService.loadTodaysGameState();
+    const currentDate = this.gameDate();
+    const savedState = currentDate === this.getTodayDate() 
+      ? this.cookieService.loadTodaysGameState()
+      : this.cookieService.loadGameState(currentDate);
+      
     if (!savedState) return;
 
     // Restore guesses by fetching spell details and recreating GuessResult objects
     if (savedState.guesses && savedState.guesses.length > 0) {
-      savedState.guesses.forEach((spellId) => {
-        this.spellService.getSpellById(spellId).subscribe((spell) => {
-          if (spell) {
-            this.spellService.compareSpell(spell.id).subscribe((response) => {
-              if (response) {
+      // Create an array of observables for each spell guess
+      const guessObservables = savedState.guesses.map((spellId, index) => 
+        this.spellService.getSpellById(spellId).pipe(
+          switchMap(spell => {
+            if (!spell) return of(null);
+            return this.spellService.compareSpell(spell.id, currentDate).pipe(
+              map(response => {
+                if (!response) return null;
                 const feedback = this.convertApiResponseToFeedback(response);
-                const currentGuesses = this.guessesList();
-                const newGuess: GuessResult = {
+                return {
                   spell,
                   feedback,
-                  attemptNumber: currentGuesses.length + 1,
-                };
-                this.guessesList.set([...currentGuesses, newGuess]);
-              }
-            });
-          }
-        });
+                  attemptNumber: index + 1,
+                } as GuessResult;
+              })
+            );
+          })
+        )
+      );
+
+      // Wait for all guesses to load in order
+      forkJoin(guessObservables).subscribe(guesses => {
+        const validGuesses = guesses.filter(g => g !== null) as GuessResult[];
+        this.guessesList.set(validGuesses);
       });
     }
 
@@ -128,7 +166,7 @@ export class GameComponent implements OnInit {
    */
   private saveGameState(guesses: GuessResult[], won: boolean, hintUsed: boolean): void {
     const gameState: GameState = {
-      date: this.getTodayDate(),
+      date: this.gameDate(),
       guesses: guesses.map((guess) => guess.spell.id),
       won,
       hintUsed,
@@ -149,8 +187,10 @@ export class GameComponent implements OnInit {
   makeGuess(guessedSpell: Spell): void {
     if (!guessedSpell) return;
 
+    const currentDate = this.gameDate();
+    
     // Call the API to compare the spell
-    this.spellService.compareSpell(guessedSpell.id).subscribe((response) => {
+    this.spellService.compareSpell(guessedSpell.id, currentDate).subscribe((response) => {
       if (!response) {
         console.error('Failed to get comparison response from API');
         return;
