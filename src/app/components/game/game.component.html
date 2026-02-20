@@ -1,11 +1,4 @@
 <div class="game-container">
-  <div class="game-header">
-    <h1>{{ uiTranslationService.getText('game.title') }}</h1>
-    <button (click)="localizationService.toggleLanguage()" class="language-toggle">
-      {{ uiTranslationService.getLanguageDisplayName(localizationService.getLanguage()) }}
-    </button>
-  </div>
-
   <div class="game-content">
     <!-- Game Instruction -->
     <div class="game-instruction">
