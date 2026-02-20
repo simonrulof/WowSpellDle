@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-attempts',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './attempts.component.html',
   styleUrl: './attempts.component.scss',
@@ -20,6 +19,9 @@ export class AttemptsComponent {
 
   // Input: number of attempts
   attemptCount = input<number>(0);
+
+  // Input: optional game date for archived games
+  gameDate = input<string | undefined>(undefined);
 
   // Output: emit when hint is used
   hintUsed = output<void>();
@@ -46,7 +48,8 @@ export class AttemptsComponent {
    */
   onHintClick(): void {
     if (this.canUnlockHint() && !this.isHintRevealed()) {
-      this.spellService.getHint().subscribe((hintResponse) => {
+      const date = this.gameDate();
+      this.spellService.getHint(date).subscribe((hintResponse) => {
         if (hintResponse) {
           this.hintResponse.set(hintResponse);
           this.isHintRevealed.set(true);

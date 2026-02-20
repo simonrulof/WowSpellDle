@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { GameComponent } from './components/game/game.component';
+import { RouterOutlet } from '@angular/router';
 import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [GameComponent, CookieConsentComponent, HeaderComponent],
+  imports: [RouterOutlet, CookieConsentComponent, HeaderComponent],
   template: `
     <app-cookie-consent></app-cookie-consent>
     <app-header></app-header>
-    <app-game></app-game>
+    <router-outlet></router-outlet>
   `,
   styleUrl: './app.scss'
 })

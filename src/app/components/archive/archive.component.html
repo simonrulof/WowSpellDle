@@ -1,0 +1,91 @@
+<div class="archive-container">
+  <div class="archive-header">
+    <h2>{{ uiTranslationService.getText('archive.title') }}</h2>
+    <p class="archive-description">{{ uiTranslationService.getText('archive.description') }}</p>
+    <button 
+      (click)="goToToday()" 
+      class="btn-back"
+      type="button">
+      {{ uiTranslationService.getText('archive.backToToday') }}
+    </button>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loading">
+      <p>{{ uiTranslationService.getText('archive.loading') }}</p>
+    </div>
+  } @else if (currentMonth()) {
+    <div class="calendar-container">
+      <!-- Month Navigation -->
+      <div class="calendar-header">
+        <button 
+          (click)="previousMonth()" 
+          class="month-nav-btn"
+          type="button"
+          aria-label="Previous month">
+          ←
+        </button>
+        <h3 class="month-title">{{ currentMonth()!.monthName }}</h3>
+        <button 
+          (click)="nextMonth()" 
+          [disabled]="!canGoToNextMonth()"
+          class="month-nav-btn"
+          type="button"
+          aria-label="Next month">
+          →
+        </button>
+      </div>
+
+      <!-- Calendar Grid -->
+      <div class="calendar">
+        <!-- Day names header -->
+        <div class="calendar-weekdays">
+          @for (dayName of getDayNames(); track dayName) {
+            <div class="weekday-label">{{ dayName }}</div>
+          }
+        </div>
+
+        <!-- Calendar days -->
+        <div class="calendar-days">
+          @for (week of currentMonth()!.weeks; track week) {
+            @for (day of week; track day.date) {
+              <button
+                class="calendar-day"
+                [class.other-month]="!day.isCurrentMonth"
+                [class.today]="day.isToday"
+                [class.has-spell]="day.hasSpell && day.isPastDate && !day.isToday"
+                [class.played]="day.hasPlayed"
+                [class.won]="day.won"
+                [class.disabled]="!day.hasSpell || day.isToday || !day.isPastDate"
+                [disabled]="!day.hasSpell || day.isToday || !day.isPastDate"
+                (click)="playDate(day)"
+                type="button"
+                [attr.aria-label]="day.date">
+                
+                <span class="day-number">{{ day.dayNumber }}</span>
+                
+                @if (day.hasSpell && day.isPastDate && !day.isToday) {
+                  <div class="day-indicator">
+                    @if (day.won && day.guessCount) {
+                      <span class="indicator-icon won" [title]="'Completed in ' + day.guessCount + ' guess' + (day.guessCount === 1 ? '' : 'es')">
+                        {{ day.guessCount }}
+                      </span>
+                    } @else if (day.hasPlayed) {
+                      <span class="indicator-icon played" title="In Progress">●</span>
+                    } @else {
+                      <span class="indicator-icon available" title="Available">○</span>
+                    }
+                  </div>
+                }
+                
+                @if (day.isToday) {
+                  <div class="today-badge">{{ uiTranslationService.getText('archive.today') }}</div>
+                }
+              </button>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

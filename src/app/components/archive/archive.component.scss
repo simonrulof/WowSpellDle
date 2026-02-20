@@ -1,0 +1,302 @@
+.archive-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.archive-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    color: #ffd700;
+    font-size: 2em;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .archive-description {
+    color: #e0e0e0;
+    font-size: 1.1em;
+    margin: 0 0 25px 0;
+  }
+}
+
+.btn-back {
+  padding: 12px 24px;
+  border: 2px solid #8b7355;
+  border-radius: 4px;
+  background-color: #2d2a25;
+  color: #ffd700;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #3d3a35;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+  }
+
+  &:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+
+  p {
+    color: #ffd700;
+    font-size: 1.3em;
+  }
+}
+
+.calendar-container {
+  background-color: rgba(45, 42, 37, 0.9);
+  border: 2px solid #8b7355;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #8b7355;
+
+  .month-title {
+    color: #ffd700;
+    font-size: 1.8em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .month-nav-btn {
+    background-color: #2d2a25;
+    border: 2px solid #8b7355;
+    color: #ffd700;
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover:not(:disabled) {
+      background-color: #3d3a35;
+      transform: scale(1.1);
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      outline: 2px solid #ffd700;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.calendar {
+  margin-bottom: 30px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+
+  .weekday-label {
+    text-align: center;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 2px solid #5a5247;
+  border-radius: 8px;
+  background-color: #2d2a25;
+  color: #e0e0e0;
+  cursor: default;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.2s ease;
+  font-size: 1em;
+
+  .day-number {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .day-indicator {
+    position: absolute;
+    bottom: 6px;
+    
+    .indicator-icon {
+      font-size: 1em;
+      
+      &.won {
+        color: #4caf50;
+        font-weight: bold;
+        font-size: 1.1em;
+        background-color: rgba(76, 175, 80, 0.3);
+        padding: 2px 6px;
+        border-radius: 4px;
+        border: 1px solid #4caf50;
+      }
+      
+      &.played {
+        color: #4a90e2;
+      }
+      
+      &.available {
+        color: #ffd700;
+      }
+    }
+  }
+
+  &.other-month {
+    opacity: 0.3;
+    background-color: #1a1816;
+  }
+
+  &.today {
+    border-color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.15);
+    
+    .today-badge {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 0.6em;
+      color: #ffd700;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  &.has-spell {
+    cursor: pointer;
+    border-color: #8b7355;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+      border-color: #ffd700;
+      background-color: #3d3a35;
+    }
+
+    &:focus {
+      outline: 2px solid #ffd700;
+      outline-offset: 2px;
+    }
+  }
+
+  &.won {
+    border-color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  &.played:not(.won) {
+    border-color: #4a90e2;
+    background-color: rgba(74, 144, 226, 0.2);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .archive-container {
+    padding: 20px;
+  }
+
+  .calendar-container {
+    padding: 20px;
+  }
+
+  .calendar-header {
+    .month-title {
+      font-size: 1.3em;
+    }
+
+    .month-nav-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2em;
+    }
+  }
+
+  .calendar-weekdays {
+    gap: 4px;
+    
+    .weekday-label {
+      font-size: 0.7em;
+      padding: 4px;
+    }
+  }
+
+  .calendar-days {
+    gap: 4px;
+  }
+
+  .calendar-day {
+    padding: 4px;
+    font-size: 0.85em;
+
+    .day-number {
+      font-size: 1em;
+    }
+
+    .day-indicator {
+      bottom: 2px;
+      
+      .indicator-icon {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .archive-header {
+    h2 {
+      font-size: 1.5em;
+    }
+
+    .archive-description {
+      font-size: 1em;
+    }
+  }
+}

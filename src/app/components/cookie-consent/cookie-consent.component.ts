@@ -5,7 +5,6 @@ import { UITranslationService } from '../../services/ui-translation.service';
 
 @Component({
   selector: 'app-cookie-consent',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './cookie-consent.component.html',
   styleUrls: ['./cookie-consent.component.scss'],
